@@ -14,21 +14,6 @@ router.get('/', (req, res) => {
         });//end GET pool query
 });//end GET call server side
 
-//this query will make post calls from member-generated data, creating exercises to track weight-load over time
-router.post('/', (req, res) => {
-    const newExercise= req.body;
-    const queryValues = [newExercise.title, newExercise.weight_load, newExercise.day, newExercise.person_id];
-    pool.query(`INSERT INTO "custom_exercise" ("title","weight_load","day","person_id")
-    VALUES ($1,$2,$3,$4);`, queryValues)
-        .then((results) => {
-            console.log('HEEEEEEEYYYY', results);
-            res.send(results.rows);            
-        }).catch((error) => {
-            console.log('Error POSTING exercise to PostgreSQL', error);
-            res.sendStatus(500);
-        })//end POST pool query
-});//end POST call server side
-
 //this query will update a member's profile information	
 router.put('/:id', (req, res) => {
     let id = req.params.id;
@@ -45,6 +30,19 @@ router.put('/:id', (req, res) => {
     });//end PUT pool query 
 });//end PUT call server side
 
-
+//this query will make post calls from member-generated data, creating exercises to track weight-load over time
+router.post('/', (req, res) => {
+    const newExercise= req.body;
+    const queryValues = [newExercise.title, newExercise.weight_load, newExercise.day, newExercise.person_id];
+    pool.query(`INSERT INTO "custom_exercise" ("title","weight_load","day","person_id")
+    VALUES ($1,$2,$3,$4);`, queryValues)
+        .then((results) => {
+            console.log('HEEEEEEEYYYY', results);
+            res.send(results.rows);            
+        }).catch((error) => {
+            console.log('Error POSTING exercise to PostgreSQL', error);
+            res.sendStatus(500);
+        })//end POST pool query
+});//end POST call server side
 
 module.exports = router;
