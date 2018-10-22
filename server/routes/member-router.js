@@ -30,7 +30,7 @@ router.put('/:id', (req, res) => {
     .then(() => {
         res.sendStatus(200);
     }).catch(error => {
-        console.log('error updating member', error);
+        console.log('error updating person', error);
         res.sendStatus(500);
     });//end PUT pool query
 });//end PUT call server side
