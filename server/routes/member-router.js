@@ -18,10 +18,10 @@ router.get('/', (req, res) => {
 router.put('/:id', (req, res) => {
     let id = req.user.id; //passport is sending the id of the member to update, so it is "user" instead of "params"
     let body = req.body;
-    console.log('UPDATE METHOD',body);      
+    const queryValues = [body.first_name, body.last_name, body.height, body.weight, body.gender, body.goal, id]
     pool.query(`UPDATE "person" 
     SET "first_name"=$1,"last_name"=$2,"height"=$3,"weight"=$4,"gender"=$5,"goal"=$6
-    WHERE "id" = $7;`, [body.first_name, body.last_name, body.height, body.weight, body.gender, body.goal, id])
+    WHERE "id" = $7;`, queryValues)
     .then(() => {
         res.sendStatus(200);
     }).catch(error => {
@@ -31,9 +31,11 @@ router.put('/:id', (req, res) => {
 });//end PUT call server side
 
 //this query will make post calls from member-generated data, creating exercises to track weight-load over time
-router.post('/', (req, res) => {
+router.post('/:id', (req, res) => {
+    let person_id= req.user.id;
     const newExercise= req.body;
-    const queryValues = [newExercise.title, newExercise.weight_load, newExercise.day, newExercise.person_id];
+    const queryValues = [newExercise.title, newExercise.weight_load, newExercise.day, person_id];
+    console.log('ADD METHOD',newExercise);      
     pool.query(`INSERT INTO "custom_exercise" ("title","weight_load","day","person_id")
     VALUES ($1,$2,$3,$4);`, queryValues)
         .then((results) => {

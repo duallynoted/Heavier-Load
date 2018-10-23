@@ -9,7 +9,6 @@ class CustomExerciseForm extends Component {
             title: '',
             weight_load: 0,
             day: '',
-            person_id: '',
         }
     };
 
@@ -32,7 +31,6 @@ class CustomExerciseForm extends Component {
                 title: '',
                 weight_load: 0,
                 day: '',
-                person_id: '',
             }
         });
         console.log('LOOOOK', this.state.newExercise);
@@ -47,7 +45,6 @@ render() {
                 <input type='text' value={this.state.newExercise.title} placeholder="Exercise" onChange={this.handleChangeFor('title')} />
                 <input type='text' value={this.state.newExercise.weight_load} placeholder="Weight" onChange={this.handleChangeFor('weight_load')} />
                 <input type='text' value={this.state.newExercise.day} placeholder="Arm Day? Tuesdays?" onChange={this.handleChangeFor('day')} />
-                <input type='text' value={this.state.newExercise.person_id} placeholder="id" onChange={this.handleChangeFor('person_id')} />
                 <br />
                 <input type='submit' value='Submit' />
             </form>

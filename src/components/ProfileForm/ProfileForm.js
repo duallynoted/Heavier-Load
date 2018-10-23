@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import CustomExerciseForm from '../CustomExerciseForm/CustomExerciseForm';
+import MemberInfoList from '../MemberInfoList/MemberInfoList';
 
 
 
@@ -58,6 +59,7 @@ class ProfileForm extends Component {
                     <input type='submit' value='Submit' />
                 </form>
                 <CustomExerciseForm />
+                <MemberInfoList />
             </div>
         );
     }
