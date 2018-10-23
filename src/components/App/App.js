@@ -18,6 +18,7 @@ import UserPage from '../UserPage/UserPage';
 import InfoPage from '../InfoPage/InfoPage';
 
 import './App.css';
+import ProfileForm from '../ProfileForm/ProfileForm';
 
 class App extends Component {
   componentDidMount () {
@@ -54,6 +55,11 @@ class App extends Component {
               exact
               path="/info"
               component={InfoPage}
+            />
+            <ProtectedRoute
+              exact
+              path="/profile"
+              component={ProfileForm}
             />
             {/* If none of the other routes matched, we will show a 404. */}
             <Route render={() => <h1>404</h1>} />

@@ -16,9 +16,9 @@ router.get('/', (req, res) => {
 
 //this query will update a member's profile information	
 router.put('/:id', (req, res) => {
-    let id = req.params.id;
+    let id = req.user.id; //passport is sending the id of the member to update, so it is "user" instead of "params"
     let body = req.body;
-    console.log(body);      
+    console.log('UPDATE METHOD',body);      
     pool.query(`UPDATE "person" 
     SET "first_name"=$1,"last_name"=$2,"height"=$3,"weight"=$4,"gender"=$5,"goal"=$6
     WHERE "id" = $7;`, [body.first_name, body.last_name, body.height, body.weight, body.gender, body.goal, id])
