@@ -4,7 +4,7 @@ import loginMode from './loginModeReducer';
 import user from './userReducer';
 import updateMemberInfoReducer from './updateMemberInfoReducer'
 import newExerciseReducer from './newExerciseReducer';
-
+import measurementsReducer from './measurementsReducer';
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
 // This is imported in index.js as rootSaga
@@ -17,6 +17,7 @@ const rootReducer = combineReducers({
   user, // will have an id and username if someone is logged in
   updateMemberInfoReducer,
   newExerciseReducer,
+  measurementsReducer
 });
 
 export default rootReducer;
