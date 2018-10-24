@@ -14,6 +14,19 @@ router.get('/', (req, res) => {
         });//end GET pool query
 });//end GET call server side
 
+//this query will make a call to the server to get user-generated exercises 
+router.get('/:id', (req, res) => {
+    let id = req.params.id
+    pool.query(`SELECT * FROM "custom_exercise"
+    WHERE "person_id" = $1;`, [id])
+        .then((results) => {
+            res.send(results.rows);
+        }).catch((error) => {   
+            res.sendStatus(500);
+            console.log('error getting exercise', error);
+        });//end GET pool query
+});//end GET call server side
+
 //this query will update a member's profile information	
 router.put('/:id', (req, res) => {
     let id = req.user.id; //passport is sending the id of the member to update, so it is "user" instead of "params"

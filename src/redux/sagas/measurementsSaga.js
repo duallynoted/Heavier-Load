@@ -13,8 +13,8 @@ function* addMeasurement(action) {
     }
 };
 
-function* addNewExercise() {
+function* addNewMeasurement() {
     yield takeLatest('ADD_MEASUREMENT', addMeasurement);
   }
 
-export default addNewExercise;
+export default addNewMeasurement;
