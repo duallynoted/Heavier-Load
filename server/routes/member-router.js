@@ -39,7 +39,7 @@ router.post('/:id', (req, res) => {
     pool.query(`INSERT INTO "custom_exercise" ("title","weight_load","day","person_id")
     VALUES ($1,$2,$3,$4);`, queryValues)
         .then((results) => {
-            console.log('HEEEEEEEYYYY', results);
+            console.log('NEWEXERCISE: ', results);
             res.send(results.rows);            
         }).catch((error) => {
             console.log('Error POSTING exercise to PostgreSQL', error);
