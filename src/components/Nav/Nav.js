@@ -26,6 +26,12 @@ const Nav = (props) => (
             Info Page
           </Link>
           <LogOutButton className="nav-link"/>
+          <Link className="nav-link" to="/exercises">
+            Excercises
+          </Link>
+          <Link className="nav-link" to="/measurements">
+            Measurements
+          </Link>
         </>
       )}
       {/* Always show this link since the about page is not protected */}

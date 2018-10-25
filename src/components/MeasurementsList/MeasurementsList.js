@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import MeasurementsForm from '../MeasurementsForm/MeasurementsForm';
 
 
 class MeasurementsList extends Component {
@@ -33,6 +34,7 @@ class MeasurementsList extends Component {
                         })}           
                           </tbody>
                 </table>
+                <MeasurementsForm />
             </div>
         );
     }

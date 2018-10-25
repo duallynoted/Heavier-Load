@@ -63,9 +63,7 @@ class ProfileForm extends Component {
                 </form>
                 <MemberInfoList />
                 <CustomExerciseForm />
-                <CustomExerciseList />
                 <MeasurementsForm />
-                <MeasurementsList />
             </div>
         );
     }

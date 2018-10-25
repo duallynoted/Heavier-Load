@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import CustomExerciseForm from '../CustomExerciseForm/CustomExerciseForm';
 
 
 class CustomExerciseList extends Component {
@@ -40,6 +41,7 @@ class CustomExerciseList extends Component {
                         })}           
                           </tbody>
                 </table>
+                <CustomExerciseForm />
             </div>
         );
     }
