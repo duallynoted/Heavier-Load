@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-class Measurements extends Component {
+class MeasurementsForm extends Component {
     state = {
         newMeasurement: {
             body_area: '',
@@ -52,4 +52,4 @@ const mapStateToProps = reduxState => ({
 });
 
 
-export default connect(mapStateToProps)(Measurements);
+export default connect(mapStateToProps)(MeasurementsForm);

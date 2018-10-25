@@ -8,7 +8,7 @@ CREATE TABLE "person" (
     "first_name" VARCHAR(60),
     "last_name" VARCHAR(60),
     "height" VARCHAR(16),
-    "weight" INT,
+    "weight" VARCHAR (40),
     "gender" VARCHAR(40),
     "goal" VARCHAR(300
  );
@@ -50,4 +50,8 @@ VALUES('left arm',17,1);
 SELECT "person"."first_name"
 FROM "person"
 WHERE "id" = 1;
+
+--query that selects all exercises from a certain member
+SELECT * FROM "custom_exercise"
+    WHERE "person_id" = 5;
  

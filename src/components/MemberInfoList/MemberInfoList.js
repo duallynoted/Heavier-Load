@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import CustomExerciseList from '../CustomExerciseList/CustomExerciseList';
+
 
 
 class MemberInfoList extends Component {
@@ -54,7 +54,6 @@ class MemberInfoList extends Component {
                         </tr>
                           </tbody>
                 </table>
-                <CustomExerciseList />
             </div>
         );
     }

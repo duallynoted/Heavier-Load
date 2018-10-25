@@ -27,6 +27,7 @@ router.get('/:id', (req, res) => {
         });//end GET pool query
 });//end GET call server side
 
+
 //this query will update a member's profile information	
 router.put('/:id', (req, res) => {
     let id = req.user.id; //passport is sending the id of the member to update, so it is "user" instead of "params"

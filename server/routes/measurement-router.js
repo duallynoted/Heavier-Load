@@ -18,4 +18,17 @@ router.post('/:id', (req, res) => {
         })//end POST pool query
 });//end POST call server side
 
+//this query will make a call to the server to get user-generated measurements 
+router.get('/:id', (req, res) => {
+    let id = req.params.id    
+    pool.query(`SELECT * FROM "measurement"
+    WHERE "person_id" = $1;`, [id])
+        .then((results) => {
+            res.send(results.rows);          
+        }).catch((error) => {   
+            res.sendStatus(500);
+            console.log('Error GETTING measurements', error);
+        });//end GET pool query
+});//end GET call server side
+
 module.exports = router;

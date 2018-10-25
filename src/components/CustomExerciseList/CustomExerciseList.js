@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 class CustomExerciseList extends Component {
     componentDidMount() {
         this.props.dispatch({ type: 'FETCH_USER', payload:this.props.reduxState.user })
-        console.log('REDUXSTATE: ', this.props.reduxState.user);
 
     }
     // handleClick = () => {
@@ -16,7 +15,6 @@ class CustomExerciseList extends Component {
         return (
             <div>
                 <h3>Exercises</h3>
-                <pre>{JSON.stringify(this.props.reduxState, null, 2)}</pre>
                 <table>
                     <thead>
                         <tr>
@@ -54,11 +52,4 @@ const mapStateToProps = reduxState => ({
 export default connect(mapStateToProps)(CustomExerciseList);
 
 
-
-{/* <tr key={user.id}>
-<td>{user.first_name}</td>
-<td>{user.last_name}</td>
-<td><button onClick={()=>this.updateUser(user.id)}>Edit</button></td>
-</tr>
-})} */}
 

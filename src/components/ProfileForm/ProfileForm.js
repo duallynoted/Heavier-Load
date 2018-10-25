@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import CustomExerciseForm from '../CustomExerciseForm/CustomExerciseForm';
 import MemberInfoList from '../MemberInfoList/MemberInfoList';
-import Measurements from '../Measurements/Measurements';
+import MeasurementsForm from '../MeasurementsForm/MeasurementsForm';
+import CustomExerciseList from '../CustomExerciseList/CustomExerciseList';
+import MeasurementsList from '../MeasurementsList/MeasurementsList';
 
 
 
@@ -59,9 +61,11 @@ class ProfileForm extends Component {
                     <br/>
                     <input type='submit' value='Submit' />
                 </form>
-                <CustomExerciseForm />
                 <MemberInfoList />
-                <Measurements />
+                <CustomExerciseForm />
+                <CustomExerciseList />
+                <MeasurementsForm />
+                <MeasurementsList />
             </div>
         );
     }
