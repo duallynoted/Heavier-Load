@@ -14,8 +14,9 @@ router.get('/', (req, res) => {
         });//end GET pool query
 });//end GET call server side
 
-//this query will make a call to the server to get user-generated exercises 
+//these queries will make a call to the server to get user-generated exercises 
 router.get('/:id', (req, res) => {
+    console.log('member-router get hit', req.params.id)
     let id = req.params.id
     pool.query(`SELECT * FROM "custom_exercise"
     WHERE "person_id" = $1;`, [id])
@@ -50,7 +51,7 @@ router.post('/:id', (req, res) => {
     const newExercise= req.body;
     const queryValues = [newExercise.title, newExercise.weight_load, newExercise.day, person_id];
     console.log('ADD METHOD',newExercise);      
-    pool.query(`INSERT INTO "custom_exercise" ("title","weight_load","day","person_id")
+    pool.query(`INSERT INTO "custom_exercise" ("title","weight_load","day_id","person_id")
     VALUES ($1,$2,$3,$4);`, queryValues)
         .then((results) => {
             console.log('NEWEXERCISE: ', results);

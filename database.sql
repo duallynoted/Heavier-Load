@@ -15,11 +15,11 @@ CREATE TABLE "person" (
 
 --create table to hold member-generated exercises to track weight-load over time
 CREATE TABLE "custom_exercise" (
-	"id" SERIAL PRIMARY KEY,
-	"title" VARCHAR(120),
-	"weight_load" INT,
-	"day" VARCHAR (120),
-	"person_id" INT REFERENCES "person"
+    "id" SERIAL PRIMARY KEY,
+    "title" VARCHAR(120),
+    "weight_load" INT,
+	"day_id" INT REFERENCES "day_of_week",
+    "person_id" INT REFERENCES "person"
 );
 
 --create table to hold member-generated measurements to track progress
@@ -29,6 +29,18 @@ CREATE TABLE "measurement" (
 	"measurement" INT,
 	"person_id" INT REFERENCES "person"
 	);
+
+--creates table with days of the week for a selectable drop-down menu referenced by "custom_exercise" by id
+CREATE TABLE "day_of_week" (
+	"id" SERIAL PRIMARY KEY,
+	"Monday" VARCHAR,
+	"Tuesday" VARCHAR,
+	"Wednesday" VARCHAR,
+	"Thursday" VARCHAR,
+	"Friday" VARCHAR,
+	"Saturday" VARCHAR,
+	"Sunday" VARCHAR,
+);
 
 --query that updates(put)profile information	
 UPDATE "person" 

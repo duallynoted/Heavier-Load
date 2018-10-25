@@ -13,6 +13,7 @@ function* addExercise(action) {
     }
 };
 
+
 function* addNewExercise() {
     yield takeLatest('ADD_EXERCISE', addExercise);
   }

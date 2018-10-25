@@ -5,7 +5,7 @@ import CustomExerciseForm from '../CustomExerciseForm/CustomExerciseForm';
 
 class CustomExerciseList extends Component {
     componentDidMount() {
-        this.props.dispatch({ type: 'FETCH_USER', payload:this.props.reduxState.user })
+        this.props.dispatch({ type: 'FETCH_DAYS', payload:this.props.reduxState.user })
 
     }
     // handleClick = () => {
@@ -25,9 +25,9 @@ class CustomExerciseList extends Component {
                             <th>
                                 Weight Load
                             </th>
-                            <th>
+                            {/* <th>
                                 Day
-                            </th>
+                            </th> */}
                         </tr>
                     </thead>
                     <tbody>
@@ -35,7 +35,7 @@ class CustomExerciseList extends Component {
                           return <tr key={exercise.id}>
                           <td>{exercise.title}</td>
                           <td>{exercise.weight_load}</td>
-                          <td>{exercise.day}</td>
+                          {/* <td>{this.props.exerciseListReducer.day_of_week.name}</td> */}
                           <td><button onClick={() => this.handleClick}>Make it Heavier</button></td>
                           </tr>
                         })}           

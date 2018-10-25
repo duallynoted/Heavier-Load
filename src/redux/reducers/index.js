@@ -7,6 +7,7 @@ import newExerciseReducer from './newExerciseReducer';
 import measurementsReducer from './measurementsReducer';
 import exerciseListReducer from './exerciseListReducer';
 import measurementsListReducer from './measurementsListReducer';
+import daysReducer from './daysReducer';
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
 // This is imported in index.js as rootSaga
@@ -22,6 +23,7 @@ const rootReducer = combineReducers({
   measurementsReducer,
   exerciseListReducer,
   measurementsListReducer,
+  daysReducer,
 });
 
 export default rootReducer;

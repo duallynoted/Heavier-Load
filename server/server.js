@@ -12,6 +12,7 @@ const passport = require('./strategies/user.strategy');
 const userRouter = require('./routes/user.router');
 const memberRouter = require('./routes/member-router');
 const measurementRouter = require('./routes/measurement-router');
+const daysRouter = require('./routes/day-router');
 
 // Body parser middleware
 app.use(bodyParser.json());
@@ -26,6 +27,7 @@ app.use(passport.session());
 
 /* Routes */
 app.use('/api/user', userRouter);
+app.use('/profile/days', daysRouter)
 app.use('/profile', memberRouter)
 app.use('/profile/measurements', measurementRouter)
 

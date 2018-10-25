@@ -8,7 +8,7 @@ class CustomExerciseForm extends Component {
         newExercise: {
             title: '',
             weight_load: 0,
-            day: '',
+            day_id:0,
         }
     };
 
@@ -21,6 +21,15 @@ class CustomExerciseForm extends Component {
             }
         });
     };
+    handleSelectChange = (event) => {
+        this.setState({
+            ...this.state.newExercise,
+            day_id: Number(event.target.value),
+        })
+        console.log('DAY',event.target.value);
+        
+    }
+
     
     handleExerciseSubmit = (event) => {
         event.preventDefault();
@@ -30,7 +39,6 @@ class CustomExerciseForm extends Component {
             newExercise: {
                 title: '',
                 weight_load: 0,
-                day: '',
             }
         });
         console.log('LOOOOK', this.state.newExercise);
@@ -44,8 +52,15 @@ render() {
             <form onSubmit={this.handleExerciseSubmit}>
                 <input type='text' value={this.state.newExercise.title} placeholder="Exercise" onChange={this.handleChangeFor('title')} />
                 <input type='text' value={this.state.newExercise.weight_load} placeholder="Weight" onChange={this.handleChangeFor('weight_load')} />
-                <input type='text' value={this.state.newExercise.day} placeholder="Arm Day? Tuesdays?" onChange={this.handleChangeFor('day')} />
                 <br />
+                <select onChange={this.handleSelectChange}>
+                {this.props.reduxState.daysReducer.map(day =>{
+                    return <option key={day.id}>{day.name}</option>
+                     
+                })}
+                    
+                </select>
+
                 <input type='submit' value='Submit' />
             </form>
         </div>
