@@ -2,12 +2,13 @@ const express = require('express');
 const pool = require('../modules/pool');
 const router = express.Router();
 
-router.get('/', (req, res) => {
-    pool.query(`SELECT * FROM "day_of_week";`)
+router.get('/:id', (req, res) => {
+    let id = req.params.id
+    pool.query(`SELECT * FROM "day_of_week"
+    WHERE "new_day_id" = $1;`, [id])
         .then((results) => {
             res.send(results.rows);
             console.log(results.rows);
-            
         }).catch((error) => {   
             res.sendStatus(500);
             console.log('error getting day', error);
