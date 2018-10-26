@@ -35,7 +35,7 @@ class CustomExerciseList extends Component {
                           return <tr key={exercise.id}>
                           <td>{exercise.title}</td>
                           <td>{exercise.weight_load}</td>
-                          <td>{exercise.day_id}</td>
+                          <td>{exercise.day_name}</td>
                           <td><button onClick={() => this.handleClick}>Make it Heavier</button></td>
                           </tr>
                         })}           

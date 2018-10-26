@@ -35,6 +35,7 @@ class ProfileForm extends Component {
         
         this.props.dispatch({ type: 'UPDATE_MEMBER_INFO', payload: this.state.newMemberInfo })
         this.setState({
+            ...this.state.newMemberInfo,
             newMemberInfo: {
                 first_name: '',
                 last_name: '',

@@ -33,7 +33,8 @@ CREATE TABLE "measurement" (
 --creates table with days of the week for a selectable drop-down menu referenced by "custom_exercise" by id
 CREATE TABLE "day_of_week" (
 	"id" SERIAL PRIMARY KEY,
-	"name" VARCHAR (300) 
+	"name" VARCHAR (300),
+	"new_day_id" INT REFERENCES "person" 
 );
 
 --for default days
