@@ -8,6 +8,7 @@ import measurementSaga from './measurementsSaga';
 import exerciseListSaga from './exerciseListSaga';
 import measurementsListSaga from './measurementsListSaga';
 import daysSaga from './daysSaga';
+import newDayFormSaga from './newDayFormSaga';
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.
 // This is imported in index.js as rootSaga
@@ -26,5 +27,6 @@ export default function* rootSaga() {
     exerciseListSaga(),
     measurementsListSaga(),
     daysSaga(),
+    newDayFormSaga(),
   ]);
 }

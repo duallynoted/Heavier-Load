@@ -55,15 +55,12 @@ render() {
             <form onSubmit={this.handleExerciseSubmit}>
                 <input type='text' value={this.state.newExercise.title} placeholder="Exercise" onChange={this.handleChangeFor('title')} />
                 <input type='text' value={this.state.newExercise.weight_load} placeholder="Weight" onChange={this.handleChangeFor('weight_load')} />
-                <br />
+                <br />                
                 <select value={this.state.day_id} onChange={this.handleSelectChange}>
                 {this.props.reduxState.daysReducer.map(day =>{
-                    return <option value={day.id} key={day.id}>{day.name}</option>
-                     
+                    return <option value={day.id} key={day.id}>{day.name}</option>   
                 })}
-                    
                 </select>
-
                 <input type='submit' value='Submit' />
             </form>
         </div>

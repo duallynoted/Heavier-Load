@@ -33,14 +33,12 @@ CREATE TABLE "measurement" (
 --creates table with days of the week for a selectable drop-down menu referenced by "custom_exercise" by id
 CREATE TABLE "day_of_week" (
 	"id" SERIAL PRIMARY KEY,
-	"Monday" VARCHAR,
-	"Tuesday" VARCHAR,
-	"Wednesday" VARCHAR,
-	"Thursday" VARCHAR,
-	"Friday" VARCHAR,
-	"Saturday" VARCHAR,
-	"Sunday" VARCHAR,
+	"name" VARCHAR (300) 
 );
+
+--for default days
+INSERT INTO "day_of_week" ("name")
+VALUES ('Monday'),('Tuesday'),('Wednesday'),('Thursday'),('Friday'),('Saturday'),('Sunday');
 
 --query that updates(put)profile information	
 UPDATE "person" 

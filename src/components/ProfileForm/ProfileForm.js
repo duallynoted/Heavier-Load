@@ -3,8 +3,7 @@ import { connect } from 'react-redux';
 import CustomExerciseForm from '../CustomExerciseForm/CustomExerciseForm';
 import MemberInfoList from '../MemberInfoList/MemberInfoList';
 import MeasurementsForm from '../MeasurementsForm/MeasurementsForm';
-import CustomExerciseList from '../CustomExerciseList/CustomExerciseList';
-import MeasurementsList from '../MeasurementsList/MeasurementsList';
+import NewDayForm from '../NewDayForm/NewDayForm';
 
 
 
@@ -63,6 +62,7 @@ class ProfileForm extends Component {
                 </form>
                 <MemberInfoList />
                 <CustomExerciseForm />
+                <NewDayForm />
                 <MeasurementsForm />
             </div>
         );
