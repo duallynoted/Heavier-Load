@@ -5,7 +5,7 @@ function* fetchMeasurements(action) {
   try {
     const response = yield axios.get(`/profile/measurements/${action.payload.id}`);
     yield put({ type: 'SET_MEASUREMENTS', payload: response.data });
-    console.log('MEASUREMENTSSAGA: ', response.data);
+  
     
   } catch (error) {
     console.log('Measurements GET request failed', error);

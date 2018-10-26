@@ -25,9 +25,9 @@ class CustomExerciseList extends Component {
                             <th>
                                 Weight Load
                             </th>
-                            {/* <th>
+                            <th>
                                 Day
-                            </th> */}
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -35,13 +35,14 @@ class CustomExerciseList extends Component {
                           return <tr key={exercise.id}>
                           <td>{exercise.title}</td>
                           <td>{exercise.weight_load}</td>
-                          {/* <td>{this.props.exerciseListReducer.day_of_week.name}</td> */}
+                          <td>{exercise.day_id}</td>
                           <td><button onClick={() => this.handleClick}>Make it Heavier</button></td>
                           </tr>
                         })}           
                           </tbody>
                 </table>
                 <CustomExerciseForm />
+                          <pre>{JSON.stringify(this.props.reduxState.daysReducer.day_id)}</pre>
             </div>
         );
     }

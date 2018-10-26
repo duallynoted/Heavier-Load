@@ -16,7 +16,6 @@ router.get('/', (req, res) => {
 
 //these queries will make a call to the server to get user-generated exercises 
 router.get('/:id', (req, res) => {
-    console.log('member-router get hit', req.params.id)
     let id = req.params.id
     pool.query(`SELECT * FROM "custom_exercise"
     WHERE "person_id" = $1;`, [id])
