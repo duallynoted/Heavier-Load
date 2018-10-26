@@ -8,7 +8,7 @@ class CustomExerciseForm extends Component {
         newExercise: {
             title: '',
             weight_load: 0,
-            day_id:0,
+            day_id:1,
         }
     };
 
@@ -23,9 +23,12 @@ class CustomExerciseForm extends Component {
     };
     handleSelectChange = (event) => {
         this.setState({
+            newExercise:{
             ...this.state.newExercise,
             day_id: Number(event.target.value),
-        })
+        }
+    });
+
         console.log('DAY',event.target.value);
         
     }
@@ -53,9 +56,9 @@ render() {
                 <input type='text' value={this.state.newExercise.title} placeholder="Exercise" onChange={this.handleChangeFor('title')} />
                 <input type='text' value={this.state.newExercise.weight_load} placeholder="Weight" onChange={this.handleChangeFor('weight_load')} />
                 <br />
-                <select onChange={this.handleSelectChange}>
+                <select value={this.state.day_id} onChange={this.handleSelectChange}>
                 {this.props.reduxState.daysReducer.map(day =>{
-                    return <option key={day.id}>{day.name}</option>
+                    return <option value={day.id} key={day.id}>{day.name}</option>
                      
                 })}
                     

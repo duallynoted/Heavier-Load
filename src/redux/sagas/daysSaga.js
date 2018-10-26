@@ -13,9 +13,9 @@ function* fetchDays(action){
   }
 }
 
-function* exerciseListSaga() {
+function* daysSaga() {
   yield takeLatest('FETCH_DAYS', fetchDays)
 
 }
 
-export default exerciseListSaga;
+export default daysSaga;

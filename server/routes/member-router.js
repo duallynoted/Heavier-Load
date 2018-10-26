@@ -49,7 +49,7 @@ router.put('/:id', (req, res) => {
 router.post('/:id', (req, res) => {
     let person_id= req.user.id;
     const newExercise= req.body;
-    const queryValues = [newExercise.title, newExercise.weight_load, newExercise.day, person_id];
+    const queryValues = [newExercise.title, newExercise.weight_load, newExercise.day_id, person_id];
     console.log('ADD METHOD',newExercise);      
     pool.query(`INSERT INTO "custom_exercise" ("title","weight_load","day_id","person_id")
     VALUES ($1,$2,$3,$4);`, queryValues)
