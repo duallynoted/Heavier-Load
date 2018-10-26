@@ -31,8 +31,7 @@ class ProfileForm extends Component {
 
     updateMemberInfo = event => {
         event.preventDefault();
-        console.log(this.state.newMemberInfo);
-        
+        console.log(this.state.newMemberInfo);        
         this.props.dispatch({ type: 'UPDATE_MEMBER_INFO', payload: this.state.newMemberInfo })
         this.setState({
             ...this.state.newMemberInfo,
