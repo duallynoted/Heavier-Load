@@ -57,6 +57,7 @@ render() {
                 <input type='text' value={this.state.newExercise.weight_load} placeholder="Weight" onChange={this.handleChangeFor('weight_load')} />
                 <br />                
                 <select value={this.state.day_id} onChange={this.handleSelectChange}>
+                <option>Select a Day</option>
                 {this.props.reduxState.daysReducer.map(day =>{
                     return <option value={day.id} key={day.id}>{day.name}</option>   
                 })}
