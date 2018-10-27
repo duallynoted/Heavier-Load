@@ -1,49 +1,79 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import Paper from '@material-ui/core/Paper';
+// import Button from '@material-ui/core/Button';
+// import swal from 'sweetalert';
 import MeasurementsForm from '../MeasurementsForm/MeasurementsForm';
+
+const styles = theme => ({
+    root: {
+        width: '75%',
+        marginTop: theme.spacing.unit * 3,
+        overflowX: 'auto',
+    },
+    table: {
+        minWidth: 700,
+    },
+});
 
 
 class MeasurementsList extends Component {
     componentDidMount() {
-        this.props.dispatch({ type: 'FETCH_USER', payload:this.props.reduxState.user })
+        this.props.dispatch({ type: 'FETCH_USER', payload: this.props.reduxState.user })
         console.log('MEASUREMENTSREDUXSTATE: ', this.props.reduxState.user);
 
     }
 
     render() {
+        const { classes } = this.props;
         return (
             <div>
-                <h3>Your Measurements</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>
-                                Body Area
-                            </th>
-                            <th>
-                                Measurement
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    {this.props.reduxState.measurementsListReducer.map(measurement => {
-                          return <tr key={measurement.id}>
-                          <td>{measurement.body_area}</td>
-                          <td>{measurement.measurement}</td>
-                          </tr>
-                        })}           
-                          </tbody>
-                </table>
+                <Paper className={classes.root}>
+                    <Table className={classes.table}>
+                        <TableHead>
+                            <TableRow>
+                                <TableCell numeric>Body Area</TableCell>
+                                <TableCell numeric>Measurement</TableCell>
+                            </TableRow>
+                        </TableHead>
+                        <TableBody>
+                            {this.props.reduxState.measurementsListReducer.map(measurement => {
+                                return (
+                                    <TableRow key={measurement.id}>
+                                        <TableCell >{measurement.body_area}</TableCell>
+                                        <TableCell numeric>{measurement.measurement}</TableCell>
+                                    </TableRow>
+                                );
+                            })}
+                        </TableBody>
+                    </Table>
+                </Paper>
                 <MeasurementsForm />
             </div>
         );
     }
 }
+MeasurementsList.propTypes = {
+    classes: PropTypes.object.isRequired,
+};
+const measurementTable = withStyles(styles)(MeasurementsList);
 
 const mapStateToProps = reduxState => ({
     reduxState,
 });
 
-export default connect(mapStateToProps)(MeasurementsList);
+export default connect(mapStateToProps)(measurementTable);
+
+
+
+
+
 
 
