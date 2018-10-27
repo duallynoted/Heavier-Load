@@ -60,10 +60,6 @@ class ProfileForm extends Component {
                     <br/>
                     <input type='submit' value='Submit' />
                 </form>
-                <MemberInfoList />
-                <CustomExerciseForm />
-                <NewDayForm />
-                <MeasurementsForm />
             </div>
         );
     }

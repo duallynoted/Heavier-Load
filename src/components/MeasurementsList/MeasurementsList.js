@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Children } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
@@ -14,12 +14,15 @@ import MeasurementsForm from '../MeasurementsForm/MeasurementsForm';
 
 const styles = theme => ({
     root: {
-        width: '75%',
+        width: '55%',
         marginTop: theme.spacing.unit * 3,
         overflowX: 'auto',
     },
     table: {
-        minWidth: 700,
+        minWidth: 100,
+    },
+    tableBody: {
+        width: '100%',
     },
 });
 
@@ -38,12 +41,12 @@ class MeasurementsList extends Component {
                 <Paper className={classes.root}>
                     <Table className={classes.table}>
                         <TableHead>
-                            <TableRow>
+                            <TableRow >
                                 <TableCell numeric>Body Area</TableCell>
                                 <TableCell numeric>Measurement</TableCell>
                             </TableRow>
                         </TableHead>
-                        <TableBody>
+                        <TableBody className={classes.tableBody}>
                             {this.props.reduxState.measurementsListReducer.map(measurement => {
                                 return (
                                     <TableRow key={measurement.id}>

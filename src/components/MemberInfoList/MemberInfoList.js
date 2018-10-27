@@ -1,7 +1,28 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
+import Card from '@material-ui/core/Card';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
 
 
+const styles = {
+    card: {
+        display: 'flex',
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        justifyContent: 'space-evenly',
+    },
+    title: {
+        fontSize: 14,
+    },
+    pos: {
+        marginBottom: 12,
+    },
+};
 
 class MemberInfoList extends Component {
     componentDidMount() {
@@ -15,62 +36,53 @@ class MemberInfoList extends Component {
 
     render() {
         let member = this.props.reduxState.user;
+        const { classes } = this.props;
         return (
             <div>
-                <h3>Member Info</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>
-                                First Name
-                            </th>
-                            <th>
-                                Last Name
-                            </th>
-                            <th>
-                                Height
-                            </th>
-                            <th>
-                                Weight
-                            </th>
-                            <th>
-                                Gender
-                            </th>
-                            <th>
-                                Goal
-                            </th>
-
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr key={member.id}>
-                            <td>{member.first_name}</td>
-                            <td>{member.last_name}</td>
-                            <td>{member.height}</td>
-                            <td>{member.weight}</td>
-                            <td>{member.gender}</td>
-                            <td>{member.goal}</td>
-                            <td><button onClick={() => this.handleClick}>Edit Member Info</button></td>
-                        </tr>
-                          </tbody>
-                </table>
+                <Card className={classes.card}>
+                    <CardContent key={member.id}>
+                        <Typography className={classes.title} color="textSecondary" gutterBottom>
+                            Member Information
+                        </Typography>
+                        <Typography variant="h2" component="h2">
+                            {member.first_name} {member.last_name}
+                        </Typography>
+                        <Typography variant="h5" className={classes.pos} color="textSecondary">
+                            Height:
+                        <br />
+                            {member.height}''
+                        </Typography>
+                        <Typography variant="h5" className={classes.pos} color="textSecondary">
+                            Weight:
+                         <br />
+                            {member.weight}
+                        </Typography>
+                        <Typography component="p">
+                            {member.gender}
+                            <br />
+                        </Typography>
+                    </CardContent>
+                    <CardActions>
+                        <Button color="primary" size="small">Edit Your Information</Button>
+                    </CardActions>
+                </Card>
             </div>
         );
     }
 }
 
+MemberInfoList.propTypes = {
+    classes: PropTypes.object.isRequired,
+};
+
+const memberInfoListCards = withStyles(styles)(MemberInfoList);
+
 const mapStateToProps = reduxState => ({
     reduxState,
 });
 
-export default connect(mapStateToProps)(MemberInfoList);
+export default connect(mapStateToProps)(memberInfoListCards);
 
 
 
-{/* <tr key={user.id}>
-<td>{user.first_name}</td>
-<td>{user.last_name}</td>
-<td><button onClick={()=>this.updateUser(user.id)}>Edit</button></td>
-</tr>
-})} */}
 
