@@ -7,6 +7,7 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import CustomExerciseListPopUpEdit from '../CustomExerciseListPop-UpEdit/CustomExerciseListPop-UpEdit';
 
 const styles = {
   card: {
@@ -39,17 +40,18 @@ class CustomExerciseListItem extends Component {
         <Typography variant ="h4" className={classes.pos} color="textSecondary">
           Weight Load:
           <br/>
-          {this.props.exercise.weight_load}
+          {this.props.exercise.weight_load} lbs
         </Typography>
         <Typography component="p">
           {this.props.exercise.day_name}
           <br />
         </Typography>
+        <Typography> <CustomExerciseListPopUpEdit exercise={this.props.exercise}/> </Typography>
       </CardContent>
-      <CardActions>
+      {/* <CardActions>
       
         <Button color="primary" size="small">Make it Heavier</Button>
-      </CardActions>
+      </CardActions> */}
     </Card>
   );
 }
@@ -61,11 +63,11 @@ CustomExerciseListItem.propTypes = {
 
 const customExerciseListItemCards = withStyles(styles)(CustomExerciseListItem);
 
-const mapReduxStateToProps = (reduxState) => {
+const mapStateToProps = (reduxState) => {
   return {
     reduxState,
   }
 }
 
-export default connect(mapReduxStateToProps)(customExerciseListItemCards);
+export default connect(mapStateToProps)(customExerciseListItemCards);
 

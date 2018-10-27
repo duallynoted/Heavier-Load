@@ -32,7 +32,6 @@ class CustomExerciseForm extends Component {
         console.log('DAY',event.target.value);
         
     }
-
     
     handleExerciseSubmit = (event) => {
         event.preventDefault();

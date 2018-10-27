@@ -13,6 +13,7 @@ const userRouter = require('./routes/user.router');
 const memberRouter = require('./routes/member-router');
 const measurementRouter = require('./routes/measurement-router');
 const daysRouter = require('./routes/day-router');
+const updateLoadRouter = require('./routes/update-load-router');
 
 // Body parser middleware
 app.use(bodyParser.json());
@@ -30,6 +31,7 @@ app.use('/api/user', userRouter);
 app.use('/profile/days', daysRouter)
 app.use('/profile', memberRouter)
 app.use('/profile/measurements', measurementRouter)
+app.use('/profile/updateload', updateLoadRouter)
 
 // Serve static files
 app.use(express.static('build'));

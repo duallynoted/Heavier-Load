@@ -13,9 +13,21 @@ function* addExercise(action) {
     }
 };
 
+function* updateLoad(action){
+    try {
+        yield call(axios.put, `/profile/updateload/${action.payload.id}`, action.payload);
+        yield put({ type: 'FETCH_USER' });
+        console.log('UPDATELOAD', action.payload);
+        
+    } catch (error) {
+        console.log('error updating user', error);
+    }
+}
+
 
 function* addNewExercise() {
     yield takeLatest('ADD_EXERCISE', addExercise);
+    yield takeLatest('UPDATE_LOAD', updateLoad)
   }
 
 export default addNewExercise;
