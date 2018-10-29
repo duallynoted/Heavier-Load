@@ -18,7 +18,6 @@ class UserPage extends Component {
         <p>Your goal is to {this.props.user.goal}</p>
 
         <MemberInfoList />
-        <NewDayForm />
         <LogOutButton className="log-in" />
       </div>
     );

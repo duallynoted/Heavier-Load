@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import NewDayForm from '../NewDayForm/NewDayForm';
 
 
 
@@ -63,6 +64,7 @@ class CustomExerciseForm extends Component {
                     </select>
                     <input type='submit' value='Submit' />
                 </form>
+                <NewDayForm />
             </div>
         );
     }

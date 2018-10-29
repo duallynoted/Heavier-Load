@@ -21,8 +21,7 @@ class NewDayForm extends Component {
         });
     };
     
-    handleSubmit = (event) => {
-        event.preventDefault();
+    handleSubmit = () => {
         this.props.dispatch({ type: 'ADD_DAY', payload: this.state.newDay })
         this.setState({
             ...this.state.newDay,
@@ -38,6 +37,7 @@ class NewDayForm extends Component {
 render() {
     return (
         <div>
+            <h3>Create Your Schedule</h3>
             <form onSubmit={this.handleSubmit}>
                 <input type='text' value={this.state.newDay.name} placeholder="Arm Day? Leg Day?" onChange={this.handleChangeFor('name')} />
                 <input type='submit' value='Submit' />
