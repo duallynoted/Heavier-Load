@@ -8,7 +8,7 @@ class CustomExerciseForm extends Component {
         newExercise: {
             title: '',
             weight_load: 0,
-            day_id:1,
+            day_id: 1,
         }
     };
 
@@ -23,16 +23,16 @@ class CustomExerciseForm extends Component {
     };
     handleSelectChange = (event) => {
         this.setState({
-            newExercise:{
-            ...this.state.newExercise,
-            day_id: Number(event.target.value),
-        }
-    });
+            newExercise: {
+                ...this.state.newExercise,
+                day_id: Number(event.target.value),
+            }
+        });
 
-        console.log('DAY',event.target.value);
-        
+        console.log('DAY', event.target.value);
+
     }
-    
+
     handleExerciseSubmit = (event) => {
         event.preventDefault();
         this.props.dispatch({ type: 'ADD_EXERCISE', payload: this.state.newExercise })
@@ -44,28 +44,28 @@ class CustomExerciseForm extends Component {
             }
         });
         console.log('LOOOOK', this.state.newExercise);
-};
+    };
 
 
-render() {
-    return (
-        <div>
-            <h3>Workout</h3>
-            <form onSubmit={this.handleExerciseSubmit}>
-                <input type='text' value={this.state.newExercise.title} placeholder="Exercise" onChange={this.handleChangeFor('title')} />
-                <input type='text' value={this.state.newExercise.weight_load} placeholder="Weight" onChange={this.handleChangeFor('weight_load')} />
-                <br />                
-                <select value={this.state.day_id} onChange={this.handleSelectChange}>
-                <option>Select a Day</option>
-                {this.props.reduxState.daysReducer.map(day =>{
-                    return <option value={day.id} key={day.id}>{day.name}</option>   
-                })}
-                </select>
-                <input type='submit' value='Submit' />
-            </form>
-        </div>
-    );
-}
+    render() {
+        return (
+            <div>
+                <h3>New Workout</h3>
+                <form onSubmit={this.handleExerciseSubmit}>
+                    <input type='text' value={this.state.newExercise.title} placeholder="Exercise" onChange={this.handleChangeFor('title')} />
+                    <input type='text' value={this.state.newExercise.weight_load} placeholder="Weight" onChange={this.handleChangeFor('weight_load')} />
+                    <br />
+                    <select value={this.state.day_id} onChange={this.handleSelectChange}>
+                        <option>Select a Day</option>
+                        {this.props.reduxState.daysReducer.map(day => {
+                            return <option value={day.id} key={day.id}>{day.name}</option>
+                        })}
+                    </select>
+                    <input type='submit' value='Submit' />
+                </form>
+            </div>
+        );
+    }
 }
 
 const mapStateToProps = reduxState => ({

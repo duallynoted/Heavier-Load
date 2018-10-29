@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import CustomExerciseForm from '../CustomExerciseForm/CustomExerciseForm';
 import CustomExerciseListItem from '../CustomExerciseListItem/CustomExerciseListItem';
+import DaySelector from '../DaySelector/DaySelector';
+import DaySelectorList from '../DaySelectorList/DaySelectorList';
 
 
 class CustomExerciseList extends Component {
@@ -18,7 +20,8 @@ class CustomExerciseList extends Component {
     render() {
         return (
             <div>
-                <h3>Exercises</h3>
+                <DaySelectorList />
+                <h3>All { this.props.reduxState.user.first_name }'s Exercises</h3>
                 <pre>{JSON.stringify(this.props.reduxState.exercise)}</pre>   
                     {this.props.reduxState.exerciseListReducer.map(exercise => {
                           return <CustomExerciseListItem key = {exercise.id} exercise={exercise}/>

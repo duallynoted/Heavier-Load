@@ -14,7 +14,7 @@ import MeasurementsForm from '../MeasurementsForm/MeasurementsForm';
 
 const styles = theme => ({
     root: {
-        width: '55%',
+        width: '62%',
         marginTop: theme.spacing.unit * 3,
         overflowX: 'auto',
     },
@@ -51,7 +51,7 @@ class MeasurementsList extends Component {
                                 return (
                                     <TableRow key={measurement.id}>
                                         <TableCell >{measurement.body_area}</TableCell>
-                                        <TableCell numeric>{measurement.measurement}</TableCell>
+                                        <TableCell numeric>{measurement.measurement}''</TableCell>
                                     </TableRow>
                                 );
                             })}
