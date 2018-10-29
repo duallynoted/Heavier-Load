@@ -1,10 +1,10 @@
-const daysReducer = (state = [], action) => {  
+const daysReducer = (state = [], action) => {
     switch (action.type) {
         case 'SET_DAYS':
-        return action.payload;
+            return action.payload;
         default:
-          return state;
-      }
-    };
-    
-    export default daysReducer;
+            return state;
+    }
+};
+
+export default daysReducer;

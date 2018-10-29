@@ -55,7 +55,7 @@ class MemberInfoList extends Component {
                         <Typography variant="h5" className={classes.pos} color="textSecondary">
                             Weight:
                          <br />
-                            {member.weight}
+                            {member.weight} lbs
                         </Typography>
                         <Typography component="p">
                             {member.gender}

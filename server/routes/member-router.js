@@ -14,19 +14,7 @@ router.get('/', (req, res) => {
         });//end GET pool query
 });//end GET call server side
 
-//these queries will make a call to the server to get user-generated exercises 
-// router.get('/:id', (req, res) => {
-//     let id = req.params.id
-//     pool.query(`SELECT * FROM "custom_exercise"
-//     WHERE "person_id" = $1;`, [id])
-//         .then((results) => {
-//             res.send(results.rows);
-//         }).catch((error) => {   
-//             res.sendStatus(500);
-//             console.log('error getting exercise', error);
-//         });//end GET pool query
-// });//end GET call server side
-
+//this query will make a call to the server to get user-generated exercises 
 router.get('/:id', (req, res) => {
     let id = req.params.id
     pool.query(`SELECT
@@ -38,8 +26,7 @@ JOIN "person" ON "custom_exercise".person_id = "person".id
 WHERE "person".id = $1;`, [id])
         .then((results) => {
             res.send(results.rows);
-            console.log(results.rows);
-            
+            console.log('EXERCISES: ', results.rows, new Date());            
         }).catch((error) => {   
             res.sendStatus(500);
             console.log('error getting exercise', error);

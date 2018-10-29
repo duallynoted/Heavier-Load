@@ -5,6 +5,8 @@ function* fetchExercises(action) {
   try {
     const response = yield axios.get(`/profile/${action.payload.id}`);
     yield put({ type: 'SET_EXERCISES', payload: response.data });
+    console.log('EXERCISES: ', response.data, new Date());
+    
   } catch (error) {
     console.log('Exercise GET request failed', error);
   }

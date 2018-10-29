@@ -5,10 +5,12 @@ import CustomExerciseListItem from '../CustomExerciseListItem/CustomExerciseList
 
 
 class CustomExerciseList extends Component {
-    componentDidMount() {
+     componentDidMount() {
+        this.props.dispatch({ type: 'FETCH_EXERCISES', payload:this.props.reduxState.user })
         this.props.dispatch({ type: 'FETCH_DAYS', payload:this.props.reduxState.user })
 
     }
+    
     // handleClick = () => {
     //     this.props.history.push('/profile')
     // };
@@ -17,12 +19,12 @@ class CustomExerciseList extends Component {
         return (
             <div>
                 <h3>Exercises</h3>
-               
+                <pre>{JSON.stringify(this.props.reduxState.exercise)}</pre>   
                     {this.props.reduxState.exerciseListReducer.map(exercise => {
                           return <CustomExerciseListItem key = {exercise.id} exercise={exercise}/>
                         })}           
                 <CustomExerciseForm />
-                          <pre>{JSON.stringify(this.props.reduxState.daysReducer.day_id)}</pre>
+            
             </div>
         );
     }
