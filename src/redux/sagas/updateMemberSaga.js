@@ -13,8 +13,8 @@ function* updateMember(action) {
     }
 };
 
-function* updateMemberInfo() {
+function* updateMemberSaga() {
     yield takeLatest('UPDATE_MEMBER_INFO', updateMember);
   }
 
-export default updateMemberInfo;
+export default updateMemberSaga;
