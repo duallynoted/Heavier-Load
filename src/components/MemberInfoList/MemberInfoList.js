@@ -42,7 +42,7 @@ class MemberInfoList extends Component {
                 <Card className={classes.card}>
                     <CardContent key={member.id}>
                         <Typography className={classes.title} color="textSecondary" gutterBottom>
-                            Member Information
+                            Member Information for {member.username}
                         </Typography>
                         <Typography variant="h2" component="h2">
                             {member.first_name} {member.last_name}

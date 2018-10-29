@@ -22,15 +22,15 @@ const Nav = (props) => (
         <Link className="nav-link" to="/profile">
         Profile
       </Link>
-          <Link className="nav-link" to="/info">
-            Info Page
-          </Link>
-          <LogOutButton className="nav-link"/>
           <Link className="nav-link" to="/exercises">
             Excercises
           </Link>
           <Link className="nav-link" to="/measurements">
             Measurements
+          </Link>
+          <LogOutButton className="nav-link"/>
+          <Link className="nav-link" to="/info">
+            Info Page
           </Link>
         </>
       )}
