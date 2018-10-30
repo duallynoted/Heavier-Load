@@ -20,7 +20,7 @@ const Nav = (props) => (
       {props.user.id && (
         <>
           <Link className="nav-link" to="/exercises">
-            Excercises
+            Exercises
           </Link>
           <Link className="nav-link" to="/measurements">
             Measurements

@@ -27,7 +27,6 @@ WHERE "person".id = $1
 ORDER BY "custom_exercise".id DESC;`, [id])
         .then((results) => {
             res.send(results.rows);
-            console.log('EXERCISES: ', results.rows, new Date());            
         }).catch((error) => {   
             res.sendStatus(500);
             console.log('error getting exercise', error);
@@ -56,7 +55,6 @@ router.post('/:id', (req, res) => {
     let person_id= req.user.id;
     const newExercise= req.body;
     const queryValues = [newExercise.title, newExercise.weight_load, newExercise.day_id, person_id];
-    console.log('ADD METHOD',newExercise);      
     pool.query(`INSERT INTO "custom_exercise" ("title","weight_load","day_id","person_id")
     VALUES ($1,$2,$3,$4);`, queryValues)
         .then((results) => {

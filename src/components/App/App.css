@@ -9,8 +9,8 @@ body {
 }
 
 form {
-    background-color: #dbd5d5;
-    width: 30%;
+    background-image: linear-gradient(rgba(160, 230, 91, 0.756), rgba(255, 255, 0, 0.646));
+    width: 45%;
     height: 250px;
     margin: 20px auto;
     padding: 25px;

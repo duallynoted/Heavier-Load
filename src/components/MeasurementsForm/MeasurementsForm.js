@@ -1,5 +1,39 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import FormControl from '@material-ui/core/FormControl';
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+
+const styles = theme => ({
+    root: {
+        display: 'flex',
+        flexWrap: 'wrap',
+    },
+    formControl: {
+        margin: theme.spacing.unit,
+        minWidth: 120,
+    },
+    selectEmpty: {
+        marginTop: theme.spacing.unit * 2,
+    },
+    container: {
+        display: 'flex',
+        flexWrap: 'wrap',
+    },
+    textField: {
+        marginLeft: theme.spacing.unit,
+        marginRight: theme.spacing.unit,
+        width: 200,
+    },
+    dense: {
+        marginTop: 19,
+    },
+    menu: {
+        width: 200,
+    },
+});
 
 class MeasurementsForm extends Component {
     state = {
@@ -33,23 +67,44 @@ class MeasurementsForm extends Component {
 };
 
 render() {
+    const { classes } = this.props;
     return (
         <div>
-            <h3>Measurements</h3>
-            <form onSubmit={this.handleMeasurementSubmit}>
-                <input type='text' value={this.state.newMeasurement.body_area} placeholder="Body Target" onChange={this.handleChangeFor('body_area')} />
-                <input type='text' value={this.state.newMeasurement.measurement} placeholder="Measurement in Decimals" onChange={this.handleChangeFor('measurement')} />
-                <br />
-                <input type='submit' value='Submit' />
-            </form>
+                    <form>
+                    <h3>Measurements</h3>
+                    <FormControl className={classes.container} noValidate autoComplete="off">
+                        <TextField
+                            id="standard-name"
+                            label="Body Area"
+                            className={classes.textField}
+                            value={this.state.newMeasurement.body_area}
+                            onChange={this.handleChangeFor('body_area')}
+                            margin="normal"
+                        />
+                        <TextField
+                            id="standard-name"
+                            label="Measurement"
+                            className={classes.textField}
+                            value={this.state.newMeasurement.measurement}
+                            onChange={this.handleChangeFor('measurement')}
+                            margin="normal"
+                        />
+                        <Button onClick={this.handleMeasurementSubmit} value='Submit' color="primary">Add Measurement</Button>
+                    </FormControl>
+                </form>
         </div>
     );
 }
 }
 
+MeasurementsForm.propTypes = {
+    classes: PropTypes.object.isRequired,
+};
+
 const mapStateToProps = reduxState => ({
     reduxState,
 });
 
+const measurementsStyles = withStyles(styles)(MeasurementsForm)
 
-export default connect(mapStateToProps)(MeasurementsForm);
+export default connect(mapStateToProps)(measurementsStyles);
