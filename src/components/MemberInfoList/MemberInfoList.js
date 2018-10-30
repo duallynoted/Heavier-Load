@@ -7,6 +7,7 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import MemberInfoPopUpEdit from '../MemberInfoPop-UpEdit/MemberInfoPop-UpEdit';
 
 
 const styles = {
@@ -62,9 +63,10 @@ class MemberInfoList extends Component {
                             <br />
                         </Typography>
                     </CardContent>
-                    <CardActions>
+                    <MemberInfoPopUpEdit />
+                    {/* <CardActions>
                         <Button color="primary" size="small">Edit Your Information</Button>
-                    </CardActions>
+                    </CardActions> */}
                 </Card>
             </div>
         );
