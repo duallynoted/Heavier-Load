@@ -1,5 +1,39 @@
 import React, { Component } from 'react';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
+import FormControl from '@material-ui/core/FormControl';
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+
+const styles = theme => ({
+  root: {
+    display: 'flex',
+    flexWrap: 'wrap',
+  },
+  formControl: {
+    margin: theme.spacing.unit,
+    minWidth: 120,
+  },
+  selectEmpty: {
+    marginTop: theme.spacing.unit * 2,
+  },
+  container: {
+    display: 'flex',
+    flexWrap: 'wrap',
+  },
+  textField: {
+    marginLeft: theme.spacing.unit,
+    marginRight: theme.spacing.unit,
+    width: 'flex',
+  },
+  dense: {
+    marginTop: 19,
+  },
+  menu: {
+    width: 200,
+  },
+});
 
 class RegisterPage extends Component {
   state = {
@@ -30,6 +64,7 @@ class RegisterPage extends Component {
   }
 
   render() {
+    const { classes } = this.props;
     return (
       <div>
         {this.props.errors.registrationMessage && (
@@ -40,7 +75,31 @@ class RegisterPage extends Component {
             {this.props.errors.registrationMessage}
           </h2>
         )}
-        <form onSubmit={this.registerUser}>
+         <form>
+          <h3>It's gettin' kinda heavy</h3>
+          <FormControl className={classes.container} noValidate autoComplete="off">
+            <TextField
+              id="standard-name"
+              label="email address"
+              className={classes.textField}
+              value={this.state.username}
+              onChange={this.handleInputChangeFor('username')}
+              margin="normal"
+            />
+            <TextField
+              id="standard-name"
+              label="password"
+              type="password"
+              name="password"
+              className={classes.textField}
+              value={this.state.password}
+              onChange={this.handleInputChangeFor('password')}
+              margin="normal"
+            />
+            <Button onClick={this.registerUser} type="submit" value='Submit' color="primary">Start Lifting</Button>
+          </FormControl>
+        </form>
+        {/* <form onSubmit={this.registerUser}>
           <h1>Register User</h1>
           <div>
             <label htmlFor="username">
@@ -72,7 +131,7 @@ class RegisterPage extends Component {
               value="Register"
             />
           </div>
-        </form>
+        </form> */}
         <center>
           <button
             type="button"
@@ -87,6 +146,10 @@ class RegisterPage extends Component {
   }
 }
 
+RegisterPage.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
+
 // Instead of taking everything from state, we just want the error messages.
 // if you wanted you could write this code like this:
 // const mapStateToProps = ({errors}) => ({ errors });
@@ -94,5 +157,8 @@ const mapStateToProps = state => ({
   errors: state.errors,
 });
 
-export default connect(mapStateToProps)(RegisterPage);
+const registerStyles = withStyles(styles)(RegisterPage)
+
+
+export default connect(mapStateToProps)(registerStyles);
 

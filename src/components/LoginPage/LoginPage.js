@@ -1,5 +1,39 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import FormControl from '@material-ui/core/FormControl';
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+
+const styles = theme => ({
+  root: {
+    display: 'flex',
+    flexWrap: 'wrap',
+  },
+  formControl: {
+    margin: theme.spacing.unit,
+    minWidth: 120,
+  },
+  selectEmpty: {
+    marginTop: theme.spacing.unit * 2,
+  },
+  container: {
+    display: 'flex',
+    flexWrap: 'wrap',
+  },
+  textField: {
+    marginLeft: theme.spacing.unit,
+    marginRight: theme.spacing.unit,
+    width: 'flex',
+  },
+  dense: {
+    marginTop: 19,
+  },
+  menu: {
+    width: 200,
+  },
+});
 
 class LoginPage extends Component {
   state = {
@@ -30,6 +64,7 @@ class LoginPage extends Component {
   }
 
   render() {
+    const { classes } = this.props;
     return (
       <div>
         {this.props.errors.loginMessage && (
@@ -40,7 +75,31 @@ class LoginPage extends Component {
             {this.props.errors.loginMessage}
           </h2>
         )}
-        <form onSubmit={this.login}>
+        <form>
+          <h1>Login</h1>
+          <FormControl className={classes.container} noValidate autoComplete="off">
+            <TextField
+              id="standard-name"
+              label="email address"
+              className={classes.textField}
+              value={this.state.username}
+              onChange={this.handleInputChangeFor('username')}
+              margin="normal"
+            />
+            <TextField
+              id="standard-name"
+              label="password"
+              type="password"
+              name="password"
+              className={classes.textField}
+              value={this.state.password}
+              onChange={this.handleInputChangeFor('password')}
+              margin="normal"
+            />
+            <Button onClick={this.login} type="submit" value='Submit' color="secondary">Login</Button>
+          </FormControl>
+        </form>
+        {/* <form onSubmit={this.login}>
           <h1>Login</h1>
           <div>
             <label htmlFor="username">
@@ -72,12 +131,12 @@ class LoginPage extends Component {
               value="Log In"
             />
           </div>
-        </form>
+        </form> */}
         <center>
           <button
             type="button"
             className="link-button"
-            onClick={() => {this.props.dispatch({type: 'SET_TO_REGISTER_MODE'})}}
+            onClick={() => { this.props.dispatch({ type: 'SET_TO_REGISTER_MODE' }) }}
           >
             Register
           </button>
@@ -87,8 +146,15 @@ class LoginPage extends Component {
   }
 }
 
+LoginPage.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
+
 const mapStateToProps = state => ({
   errors: state.errors,
 });
 
-export default connect(mapStateToProps)(LoginPage);
+const loginStyles = withStyles(styles)(LoginPage)
+
+
+export default connect(mapStateToProps)(loginStyles);

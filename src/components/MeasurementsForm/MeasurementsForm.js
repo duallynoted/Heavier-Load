@@ -25,7 +25,7 @@ const styles = theme => ({
     textField: {
         marginLeft: theme.spacing.unit,
         marginRight: theme.spacing.unit,
-        width: 200,
+        width: 'flex',
     },
     dense: {
         marginTop: 19,
@@ -39,7 +39,7 @@ class MeasurementsForm extends Component {
     state = {
         newMeasurement: {
             body_area: '',
-            measurement:0,
+            measurement: 0,
         }
     };
 
@@ -52,7 +52,7 @@ class MeasurementsForm extends Component {
             }
         });
     };
-    
+
     handleMeasurementSubmit = (event) => {
         event.preventDefault();
         this.props.dispatch({ type: 'ADD_MEASUREMENT', payload: this.state.newMeasurement })
@@ -60,17 +60,17 @@ class MeasurementsForm extends Component {
             ...this.state.newMeasurement,
             newMeasurement: {
                 body_area: '',
-                measurement:0,
+                measurement: 0,
             }
         });
         console.log('LOOOOK', this.state.newMeasurement);
-};
+    };
 
-render() {
-    const { classes } = this.props;
-    return (
-        <div>
-                    <form>
+    render() {
+        const { classes } = this.props;
+        return (
+            <div>
+                <form>
                     <h3>Measurements</h3>
                     <FormControl className={classes.container} noValidate autoComplete="off">
                         <TextField
@@ -89,12 +89,12 @@ render() {
                             onChange={this.handleChangeFor('measurement')}
                             margin="normal"
                         />
-                        <Button onClick={this.handleMeasurementSubmit} value='Submit' color="primary">Add Measurement</Button>
+                        <Button onClick={this.handleMeasurementSubmit} type="submit" value='Submit' color="primary">Add Measurement</Button>
                     </FormControl>
                 </form>
-        </div>
-    );
-}
+            </div>
+        );
+    }
 }
 
 MeasurementsForm.propTypes = {

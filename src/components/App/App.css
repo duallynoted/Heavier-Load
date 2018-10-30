@@ -9,7 +9,7 @@ body {
 }
 
 form {
-    background-image: linear-gradient(rgba(160, 230, 91, 0.756), rgba(255, 255, 0, 0.646));
+    background-image: linear-gradient(rgba(13, 104, 240, 0.756), rgba(216, 74, 13, 0.646));
     width: 45%;
     height: 250px;
     margin: 20px auto;
@@ -23,7 +23,7 @@ input {
 }
 
 .log-in, .log-out, .register {
-  background-color: #e3e3e3;
+  background-image: linear-gradient(rgba(216, 74, 13, 0.303), rgba(13, 104, 240, 0.413));
   border-radius: 4px;
   min-height: 50px;
   min-width: 100px;

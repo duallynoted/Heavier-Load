@@ -28,7 +28,7 @@ const styles = theme => ({
     textField: {
         marginLeft: theme.spacing.unit,
         marginRight: theme.spacing.unit,
-        width: 200,
+        width: 'flex',
     },
     dense: {
         marginTop: 19,
@@ -111,7 +111,7 @@ class CustomExerciseForm extends Component {
                                 return <MenuItem value={day.id} key={day.id}>{day.name}</MenuItem>
                             })}
                         </Select>
-                        <Button onClick={this.handleExerciseSubmit} value='Submit' color="primary">Add Exercise</Button>
+                        <Button onClick={this.handleExerciseSubmit} type="submit" value='Submit' color="primary">Add Exercise</Button>
                     </FormControl>
                 </form>
                 <NewDayForm />

@@ -45,7 +45,6 @@ class DaySelector extends Component {
     const { classes } = this.props;
     return (
       <div>
-        <form>
         <FormControl className={classes.formControl}>
           <InputLabel
             ref={ref => {
@@ -64,7 +63,6 @@ class DaySelector extends Component {
           </Select>
 
         </FormControl>
-        </form>
       </div>
     );
   }

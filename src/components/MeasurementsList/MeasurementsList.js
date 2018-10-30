@@ -20,9 +20,10 @@ const styles = theme => ({
     },
     table: {
         minWidth: 100,
+        marginRight: theme.spacing.unit * 4,
     },
     tableBody: {
-        width: '100%',
+        width: 'flex',
     },
 });
 

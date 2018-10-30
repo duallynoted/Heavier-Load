@@ -25,7 +25,7 @@ const styles = theme => ({
     textField: {
         marginLeft: theme.spacing.unit,
         marginRight: theme.spacing.unit,
-        width: 200,
+        width: 'flex',
     },
     dense: {
         marginTop: 19,
@@ -82,7 +82,7 @@ class NewDayForm extends Component {
                             onChange={this.handleChangeFor('name')}
                             margin="normal"
                         />
-                        <Button onClick={this.handleSubmit} value='Submit' color="primary">Create Workout Day</Button>
+                        <Button onClick={this.handleSubmit} type="submit" value='Submit' color="primary">Create Workout Day</Button>
                     </FormControl>
                 </form>
             </div>
