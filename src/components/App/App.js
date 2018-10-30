@@ -60,11 +60,6 @@ class App extends Component {
             />
             <ProtectedRoute
               exact
-              path="/profile"
-              component={ProfileForm}
-            />
-            <ProtectedRoute
-              exact
               path="/exercises"
               component={CustomExerciseList}
             />

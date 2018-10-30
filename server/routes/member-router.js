@@ -23,7 +23,8 @@ router.get('/:id', (req, res) => {
 FROM "day_of_week"
 JOIN "custom_exercise" on "day_of_week"."id" = "custom_exercise"."day_id"
 JOIN "person" ON "custom_exercise".person_id = "person".id
-WHERE "person".id = $1;`, [id])
+WHERE "person".id = $1
+ORDER BY "custom_exercise".id DESC;`, [id])
         .then((results) => {
             res.send(results.rows);
             console.log('EXERCISES: ', results.rows, new Date());            
