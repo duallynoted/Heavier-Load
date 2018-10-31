@@ -5,22 +5,30 @@ import {
   Redirect,
   Switch,
 } from 'react-router-dom';
-
 import {connect} from 'react-redux';
-
 import Nav from '../Nav/Nav';
 import Footer from '../Footer/Footer';
-
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute'
-
 import AboutPage from '../AboutPage/AboutPage';
 import UserPage from '../UserPage/UserPage';
 import InfoPage from '../InfoPage/InfoPage';
-
 import './App.css';
-import ProfileForm from '../ProfileForm/ProfileForm';
 import CustomExerciseList from '../CustomExerciseList/CustomExerciseList';
 import MeasurementsList from '../MeasurementsList/MeasurementsList';
+import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
+import { createMuiTheme } from '@material-ui/core/styles';
+import orange from '@material-ui/core/colors/orange';
+import green from '@material-ui/core/colors/green';
+import red from '@material-ui/core/colors/red';
+
+
+const theme = createMuiTheme({
+  palette: {
+    primary: orange,
+    secondary: green,
+    error: red,
+  }
+});
 
 class App extends Component {
   componentDidMount () {
@@ -29,6 +37,7 @@ class App extends Component {
 
   render() {
     return (
+      <MuiThemeProvider theme={theme}>
       <Router>
         <div>
           <Nav />
@@ -74,6 +83,7 @@ class App extends Component {
           <Footer />
         </div>
       </Router>
+      </MuiThemeProvider>
   )}
 }
 
