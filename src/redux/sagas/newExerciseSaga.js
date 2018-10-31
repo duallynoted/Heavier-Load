@@ -24,10 +24,22 @@ function* updateLoad(action){
     }
 }
 
+function* deleteExercise(action){
+    try {
+        yield call(axios.delete, `/profile/${action.payload.id}`, action.payload);
+        yield put({ type: 'FETCH_USER' });
+        console.log('DELETEEXERCISE', action.payload);
+        
+    } catch (error) {
+        console.log('error updating user', error);
+    }
+}
+
 
 function* addNewExercise() {
     yield takeLatest('ADD_EXERCISE', addExercise);
     yield takeLatest('UPDATE_LOAD', updateLoad)
+    yield takeLatest('DELETE_EXERCISE', deleteExercise)
   }
 
 export default addNewExercise;

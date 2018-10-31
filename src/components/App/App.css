@@ -11,7 +11,7 @@ body {
 form {
     background-image: linear-gradient(rgba(13, 104, 240, 0.756), rgba(216, 74, 13, 0.646));
     width: 45%;
-    height: 250px;
+    height: auto;
     margin: 20px auto;
     padding: 25px;
     border-radius: 2px;

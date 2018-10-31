@@ -66,4 +66,18 @@ router.post('/:id', (req, res) => {
         })//end POST pool query
 });//end POST call server side
 
+//this will delete user-generated exercises
+router.delete('/:id', (req, res) => {
+    let id = req.params.id
+    console.log('D E L E T E: ', id);
+    pool.query(`DELETE FROM "custom_exercise"
+    WHERE "id" = ($1);`, [id])
+        .then((results) => {
+            res.sendStatus(200);
+        }).catch((error) => {
+            console.log('Error DELETING exercise from PostgreSQL', error);
+            res.sendStatus(500);
+        })//end DELETE query
+ });//end DELETE call server side
+
 module.exports = router;

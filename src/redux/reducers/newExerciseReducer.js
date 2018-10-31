@@ -2,6 +2,8 @@ const newExerciseReducer = (state = {}, action) => {
     switch (action.type) {
       case 'ADD_EXERCISE':
         return action.payload;
+      case 'DELETE_EXERCISE':
+        return action.payload;
       default:
         return state;
     }
