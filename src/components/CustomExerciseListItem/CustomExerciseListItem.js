@@ -11,9 +11,9 @@ import CustomExerciseListPopUpEdit from '../CustomExerciseListPop-UpEdit/CustomE
 
 const styles = {
   card: {
-    maxWidth: 150,
-    minWidth: 100,
-    display: "inline-block",
+    maxWidth: "100%",
+    // minWidth: 100,
+    // display: "inline-block",
   },
   title: {
     fontSize: 14,
@@ -26,7 +26,7 @@ const styles = {
 class CustomExerciseListItem extends Component {
 
   deleteExercise = (exercise) => {
-    this.props.dispatch({type:'DELETE_EXERCISE', payload: exercise})
+    this.props.dispatch({ type: 'DELETE_EXERCISE', payload: exercise })
   }
 
   render() {

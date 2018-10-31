@@ -10,3 +10,12 @@ const greatJobFunction = number => {
     }
 };
 greatJobFunction();
+
+
+const consecOnes = binaryArray => {
+    for (i = 0; i < binaryArray.length; i++) {
+        if(binaryArray)
+        return i;
+    }
+    return 0;
+};

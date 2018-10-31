@@ -4,6 +4,8 @@ import CustomExerciseForm from '../CustomExerciseForm/CustomExerciseForm';
 import CustomExerciseListItem from '../CustomExerciseListItem/CustomExerciseListItem';
 import DaySelector from '../DaySelector/DaySelector';
 import DaySelectorList from '../DaySelectorList/DaySelectorList';
+import Grid from '@material-ui/core/Grid';
+
 
 
 class CustomExerciseList extends Component {
@@ -23,9 +25,22 @@ class CustomExerciseList extends Component {
                 <DaySelectorList />
                 <h3>All { this.props.reduxState.user.first_name }'s Exercises</h3>
                 <pre>{JSON.stringify(this.props.reduxState.exercise)}</pre>   
+                <Grid
+                    container
+                    direction="row"
+                    justify="space-evenly"
+                    alignItems="flex-start"
+                    spacing={40}
+                    style={{width: "100%"}}
+                    > 
                     {this.props.reduxState.exerciseListReducer.map(exercise => {
-                          return <CustomExerciseListItem key = {exercise.id} exercise={exercise}/>
-                        })}           
+                          return (
+                            <Grid item xs={12} md={6} lg={12}>
+                                <CustomExerciseListItem key={exercise.id} exercise={exercise} />
+                            </Grid>
+                            )
+                        })}
+                        </Grid>           
                 <CustomExerciseForm />
             
             </div>
