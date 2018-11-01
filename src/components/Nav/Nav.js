@@ -8,6 +8,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
+import VerifiedUserIcon from '@material-ui/icons/VerifiedUser';
 import NavDrawer from '../NavDrawer/NavDrawer';
 
 const styles = {
@@ -32,7 +33,7 @@ class Nav extends Component {
         <AppBar position="static">
           <Toolbar>
             <IconButton className={classes.menuButton}>
-              {this.props.user.id ? <NavDrawer /> : null}
+              {this.props.user.id ? <NavDrawer /> : <VerifiedUserIcon />}
             </IconButton>
             <Typography variant="h5" color="inherit" className={classes.grow}>
               Heavier Load
@@ -45,11 +46,12 @@ class Nav extends Component {
                   {/* Shows Login/Register when users aren't logged in, and shows as 'Home' when they log in */}
                   {this.props.user.id ? 'Home' : 'Login / Register'}
                 </Link>
-                {/* Show the link to the info page and the logout button if the user is logged in */}
-                {this.props.user.id && (
-                  <>
-                  </>
-                )}
+                <Link className="nav-link" to="/createexercise" >
+                  {this.props.user.id ? 'Create Exercise' : ""}
+                </Link>
+                <Link className="nav-link" to="/createmeasurement" >
+                  {this.props.user.id ? 'Create Measurement' : ""}
+                </Link>
               </div>
             </div>
           </Toolbar>

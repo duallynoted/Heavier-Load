@@ -7,6 +7,7 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
 
 
 const styles = theme => ({
@@ -37,9 +38,8 @@ class UserPage extends Component {
             Your goal is to: {this.props.user.goal}
           </Typography>
           <MemberInfoList />
+          <Button onClick={this.logout}>Log Out</Button>
         </Paper>
-
-        <LogOutButton className="log-in" />
       </div>
     );
   }
