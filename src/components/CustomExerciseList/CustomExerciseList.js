@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import CustomExerciseListItem from '../CustomExerciseListItem/CustomExerciseListItem';
-import DaySelector from '../DaySelector/DaySelector';
 import DaySelectorList from '../DaySelectorList/DaySelectorList';
 import Grid from '@material-ui/core/Grid';
 import Divider from '@material-ui/core/Divider';
+import Typography from '@material-ui/core/Typography';
+
+
 
 
 class CustomExerciseList extends Component {
@@ -14,17 +16,14 @@ class CustomExerciseList extends Component {
 
     }
 
-    // handleClick = () => {
-    //     this.props.history.push('/profile')
-    // };
-
     render() {
         return (
             <div>
                 <DaySelectorList />
                 <Divider />
-                <h3>All {this.props.reduxState.user.first_name}'s Exercises</h3>
-                <pre>{JSON.stringify(this.props.reduxState.exercise)}</pre>
+                <Typography variant="h3">
+                    All {this.props.reduxState.user.first_name}'s Exercises
+                     </Typography>
                 <Grid
                     container
                     direction="row"
@@ -35,7 +34,7 @@ class CustomExerciseList extends Component {
                 >
                     {this.props.reduxState.exerciseListReducer.map(exercise => {
                         return (
-                            <Grid item xs={12} md={6} lg={12}>
+                            <Grid item xs={12} md={6} lg={3}>
                                 <CustomExerciseListItem key={exercise.id} exercise={exercise} />
                             </Grid>
                         )

@@ -5,9 +5,12 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
+
 
 const styles = theme => ({
     root: {
+        justifyContent: 'center',
         display: 'flex',
         flexWrap: 'wrap',
     },
@@ -70,19 +73,22 @@ class NewDayForm extends Component {
         const { classes } = this.props;
         return (
             <div>
-                <h3>Create Your Schedule</h3>
+                <Typography variant="h4" component="h3">
+                    Start Here by Creating Days Which Hold Your Exercises
+                     </Typography>
                 <form>
-                    <h3>New Workout</h3>
                     <FormControl className={classes.container} noValidate autoComplete="off">
+                        <Typography variant="h6" component="h3">
+                            Create Workout Day
+                    </Typography>
                         <TextField
-                            id="standard-name"
                             label="Tuesdays? Leg Day?"
                             className={classes.textField}
                             value={this.state.newDay.name}
                             onChange={this.handleChangeFor('name')}
                             margin="normal"
                         />
-                        <Button onClick={this.handleSubmit} type="submit" value='Submit' color="primary">Create Workout Day</Button>
+                        <Button onClick={this.handleSubmit} type="submit" value='Submit' color="primary">Add Day</Button>
                     </FormControl>
                 </form>
             </div>

@@ -8,11 +8,17 @@ import { withStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import NewDayForm from '../NewDayForm/NewDayForm';
 import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
+
 
 const styles = theme => ({
     root: {
+        ...theme.mixins.gutters(),
+        paddingTop: theme.spacing.unit * 4,
+        paddingBottom: theme.spacing.unit * 3,
         display: 'flex',
         flexWrap: 'wrap',
+        justifyContent: 'center',
     },
     formControl: {
         margin: theme.spacing.unit,
@@ -85,11 +91,16 @@ class CustomExerciseForm extends Component {
         const { classes } = this.props;
         return (
             <div>
+                <NewDayForm />
+                {/* <Paper className={classes.root} elevation={10}> */}
+                <br />
+                <br />
+                <Typography variant="h4" component="h3">
+                    Create Your Exercise with a Title, Weight Load, and Day
+                     </Typography>
                 <form>
-                    <h3>New Workout</h3>
                     <FormControl className={classes.container} noValidate autoComplete="off">
                         <TextField
-                            id="standard-name"
                             label="Exercise"
                             className={classes.textField}
                             value={this.state.newExercise.title}
@@ -97,7 +108,6 @@ class CustomExerciseForm extends Component {
                             margin="normal"
                         />
                         <TextField
-                            id="standard-name"
                             label="Weight"
                             className={classes.textField}
                             value={this.state.newExercise.weight_load}
@@ -114,7 +124,7 @@ class CustomExerciseForm extends Component {
                         <Button onClick={this.handleExerciseSubmit} type="submit" value='Submit' color="primary">Add Exercise</Button>
                     </FormControl>
                 </form>
-                <NewDayForm />
+                {/* </Paper> */}
             </div>
         );
     }
