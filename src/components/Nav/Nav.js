@@ -32,7 +32,7 @@ class Nav extends Component {
         <AppBar position="static">
           <Toolbar>
             <IconButton className={classes.menuButton}>
-              <NavDrawer />
+              {this.props.user.id ? <NavDrawer /> : null}
             </IconButton>
             <Typography variant="h5" color="inherit" className={classes.grow}>
               Heavier Load
@@ -42,7 +42,7 @@ class Nav extends Component {
               </Link>
               <div className="nav-right">
                 <Link className="nav-link" to="/home">
-                  {/* Shows Login/Register when users aren't logged in, an disappears when they log in */}
+                  {/* Shows Login/Register when users aren't logged in, and shows as 'Home' when they log in */}
                   {this.props.user.id ? 'Home' : 'Login / Register'}
                 </Link>
                 {/* Show the link to the info page and the logout button if the user is logged in */}
