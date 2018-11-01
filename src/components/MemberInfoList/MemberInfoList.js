@@ -12,13 +12,16 @@ import MemberInfoPopUpEdit from '../MemberInfoPop-UpEdit/MemberInfoPop-UpEdit';
 
 const styles = {
     card: {
+        margin: "auto",
+        maxWidth: 850,
         display: 'flex',
         flexDirection: 'row',
         flexWrap: 'wrap',
-        justifyContent: 'space-evenly',
+        justifyContent: 'center',
     },
     title: {
         fontSize: 14,
+        alignText: "center",
     },
     pos: {
         marginBottom: 12,
@@ -62,11 +65,10 @@ class MemberInfoList extends Component {
                             {member.gender}
                             <br />
                         </Typography>
+                        <CardActions>
+                            <MemberInfoPopUpEdit />
+                        </CardActions>
                     </CardContent>
-                    <MemberInfoPopUpEdit />
-                    {/* <CardActions>
-                        <Button color="primary" size="small">Edit Your Information</Button>
-                    </CardActions> */}
                 </Card>
             </div>
         );
