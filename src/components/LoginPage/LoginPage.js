@@ -5,6 +5,8 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
+
 
 const styles = theme => ({
   root: {
@@ -76,7 +78,9 @@ class LoginPage extends Component {
           </h2>
         )}
         <form>
-          <h1>Login</h1>
+          <Typography variant="h4" component="h3">
+            Login
+                     </Typography>
           <FormControl className={classes.container} noValidate autoComplete="off">
             <TextField
               id="standard-name"
@@ -99,46 +103,15 @@ class LoginPage extends Component {
             <Button onClick={this.login} type="submit" value='Submit' color="secondary">Login</Button>
           </FormControl>
         </form>
-        {/* <form onSubmit={this.login}>
-          <h1>Login</h1>
-          <div>
-            <label htmlFor="username">
-              Username:
-              <input
-                type="text"
-                name="username"
-                value={this.state.username}
-                onChange={this.handleInputChangeFor('username')}
-              />
-            </label>
-          </div>
-          <div>
-            <label htmlFor="password">
-              Password:
-              <input
-                type="password"
-                name="password"
-                value={this.state.password}
-                onChange={this.handleInputChangeFor('password')}
-              />
-            </label>
-          </div>
-          <div>
-            <input
-              className="log-in"
-              type="submit"
-              name="submit"
-              value="Log In"
-            />
-          </div>
-        </form> */}
         <center>
           <button
             type="button"
             className="link-button"
             onClick={() => { this.props.dispatch({ type: 'SET_TO_REGISTER_MODE' }) }}
           >
-            Register
+            <Typography variant="h5">
+              Register
+                     </Typography>
           </button>
         </center>
       </div>

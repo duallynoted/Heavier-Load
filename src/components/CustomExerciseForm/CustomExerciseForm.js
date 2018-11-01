@@ -95,7 +95,7 @@ class CustomExerciseForm extends Component {
                 {/* <Paper className={classes.root} elevation={10}> */}
                 <br />
                 <br />
-                <Typography variant="h4" component="h3">
+                <Typography variant="h5" component="h3">
                     Create Your Exercise with a Title, Weight Load, and Day
                      </Typography>
                 <form>

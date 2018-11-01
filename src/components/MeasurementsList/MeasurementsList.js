@@ -8,9 +8,6 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-// import Button from '@material-ui/core/Button';
-// import swal from 'sweetalert';
-import MeasurementsForm from '../MeasurementsForm/MeasurementsForm';
 
 const styles = theme => ({
     root: {
@@ -59,7 +56,6 @@ class MeasurementsList extends Component {
                         </TableBody>
                     </Table>
                 </Paper>
-                <MeasurementsForm />
             </div>
         );
     }

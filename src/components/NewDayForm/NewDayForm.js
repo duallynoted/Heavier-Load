@@ -73,7 +73,7 @@ class NewDayForm extends Component {
         const { classes } = this.props;
         return (
             <div>
-                <Typography variant="h4" component="h3">
+                <Typography variant="h5" component="h3">
                     Start Here by Creating Days Which Hold Your Exercises
                      </Typography>
                 <form>
