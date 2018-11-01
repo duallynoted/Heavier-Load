@@ -38,7 +38,6 @@ class Nav extends Component {
             <Typography variant="h6" color="inherit" className={classes.grow}>
               <NavDrawer />
               <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
-                <MenuIcon />
                 <div className="nav">
                   <Link to="/home">
                     <h2 className="nav-title">Heavier Load</h2>
@@ -53,15 +52,6 @@ class Nav extends Component {
                     {/* Show the link to the info page and the logout button if the user is logged in */}
                     {this.props.user.id && (
                       <>
-                        <Link className="nav-link" to="/exercises">
-                          Exercises
-                      </Link>
-                        <Link className="nav-link" to="/measurements">
-                          Measurements
-                      </Link>
-                        <Link className="nav-link" to="/info">
-                          Info Page
-                      </Link>
                         {/* <LogOutButton className="nav-link" /> */}
                       </>
                     )}
