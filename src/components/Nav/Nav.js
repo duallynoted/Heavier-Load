@@ -1,18 +1,14 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import LogOutButton from '../LogOutButton/LogOutButton';
 import './Nav.css';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
 import NavDrawer from '../NavDrawer/NavDrawer';
-
 
 const styles = {
   root: {
@@ -35,34 +31,27 @@ class Nav extends Component {
       <div className={classes.root}>
         <AppBar position="static">
           <Toolbar>
-            <Typography variant="h6" color="inherit" className={classes.grow}>
+            <IconButton className={classes.menuButton}>
               <NavDrawer />
-              <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
-                <div className="nav">
-                  <Link to="/home">
-                    <h2 className="nav-title">Heavier Load</h2>
-                  </Link>
-                  <div className="nav-right">
-                    <Link className="nav-link" to="/home">
-                      {/* Show this link if they are logged in or not,
-        but call this link 'Home' if they are logged in,
-        and call this link 'Login / Register' if they are not */}
-                      {this.props.user.id ? 'Home' : 'Login / Register'}
-                    </Link>
-                    {/* Show the link to the info page and the logout button if the user is logged in */}
-                    {this.props.user.id && (
-                      <>
-                        {/* <LogOutButton className="nav-link" /> */}
-                      </>
-                    )}
-                    {/* Always show this link since the about page is not protected */}
-                    <Link className="nav-link" to="/about">
-                      About
-                    </Link>
-                  </div>
-                </div>
-              </IconButton>
+            </IconButton>
+            <Typography variant="h5" color="inherit" className={classes.grow}>
+              Heavier Load
             </Typography>
+            <div>
+              <Link to="/home">
+              </Link>
+              <div className="nav-right">
+                <Link className="nav-link" to="/home">
+                  {/* Shows Login/Register when users aren't logged in, an disappears when they log in */}
+                  {this.props.user.id ? 'Home' : 'Login / Register'}
+                </Link>
+                {/* Show the link to the info page and the logout button if the user is logged in */}
+                {this.props.user.id && (
+                  <>
+                  </>
+                )}
+              </div>
+            </div>
           </Toolbar>
         </AppBar>
       </div>
