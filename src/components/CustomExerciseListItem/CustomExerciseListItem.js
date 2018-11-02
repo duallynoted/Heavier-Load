@@ -8,6 +8,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import CustomExerciseListPopUpEdit from '../CustomExerciseListPop-UpEdit/CustomExerciseListPop-UpEdit';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 const styles = {
   card: {
@@ -52,7 +53,7 @@ class CustomExerciseListItem extends Component {
           <Typography> <CustomExerciseListPopUpEdit exercise={this.props.exercise} /> </Typography>
         </CardContent>
         <CardActions>
-          <Button onClick={() => this.deleteExercise(this.props.exercise)} color="primary" size="small">Delete</Button>
+          <Button onClick={() => this.deleteExercise(this.props.exercise)} color="primary" size="small"><DeleteIcon /></Button>
         </CardActions>
       </Card>
     );
