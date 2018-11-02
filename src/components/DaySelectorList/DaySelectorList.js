@@ -51,8 +51,3 @@ const mapStateToProps = reduxState => ({
 export default connect(mapStateToProps)(DaySelectorList);
 
 
-// for (let i = 0; i < this.props.reduxState.setSelectedDayReducer.length; ) {
-//     const element = this.props.reduxState.setSelectedDayReducer[i];
-
-// }
-

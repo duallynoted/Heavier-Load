@@ -21,6 +21,8 @@ class CustomExerciseList extends Component {
             <div>
                 <DaySelectorList />
                 <Divider />
+
+                <Divider />
                 <Typography variant="h3">
                     All {this.props.reduxState.user.first_name}'s Exercises
                      </Typography>

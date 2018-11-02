@@ -56,12 +56,11 @@ class DaySelector extends Component {
             value={this.props.reduxState.daysReducer.day_id}
             onChange={this.handleSelectExerciseDay}
           >
-            <MenuItem value={0}>Today's schedule for {this.props.reduxState.user.first_name}</MenuItem>
+            <MenuItem value={0}>View All {this.props.reduxState.user.first_name}'s Exercises</MenuItem>
             {this.props.reduxState.daysReducer.map(day => {
               return <MenuItem value={day.id} key={day.id}>{day.name}</MenuItem>
             })}
           </Select>
-
         </FormControl>
       </div>
     );

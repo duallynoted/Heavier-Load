@@ -17,8 +17,8 @@ import CustomExerciseList from '../CustomExerciseList/CustomExerciseList';
 import MeasurementsList from '../MeasurementsList/MeasurementsList';
 import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
 import { createMuiTheme } from '@material-ui/core/styles';
-import orange from '@material-ui/core/colors/orange';
-import green from '@material-ui/core/colors/green';
+import deepOrange from '@material-ui/core/colors/deepOrange';
+import lightGreen from '@material-ui/core/colors/lightGreen';
 import red from '@material-ui/core/colors/red';
 import CustomExerciseForm from '../CustomExerciseForm/CustomExerciseForm';
 import MeasurementsForm from '../MeasurementsForm/MeasurementsForm';
@@ -26,8 +26,8 @@ import MeasurementsForm from '../MeasurementsForm/MeasurementsForm';
 
 const theme = createMuiTheme({
   palette: {
-    primary: orange,
-    secondary: green,
+    primary: deepOrange,
+    secondary: lightGreen,
     error: red,
   }
 });

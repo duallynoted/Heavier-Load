@@ -92,7 +92,6 @@ class CustomExerciseForm extends Component {
         return (
             <div>
                 <NewDayForm />
-                {/* <Paper className={classes.root} elevation={10}> */}
                 <br />
                 <br />
                 <Typography variant="h5" component="h3">
@@ -124,7 +123,6 @@ class CustomExerciseForm extends Component {
                         <Button onClick={this.handleExerciseSubmit} type="submit" value='Submit' color="primary">Add Exercise</Button>
                     </FormControl>
                 </form>
-                {/* </Paper> */}
             </div>
         );
     }

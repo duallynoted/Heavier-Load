@@ -16,10 +16,6 @@ import TrackChangesIcon from '@material-ui/icons/TrackChanges';
 import Divider from '@material-ui/core/Divider';
 import VerifiedUserIcon from '@material-ui/icons/VerifiedUser';
 import InfoIcon from '@material-ui/icons/Info';
-import LogOutButton from '../LogOutButton/LogOutButton';
-
-
-
 
 const styles = {
     list: {
