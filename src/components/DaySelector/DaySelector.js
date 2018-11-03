@@ -51,7 +51,7 @@ class DaySelector extends Component {
               this.InputLabelRef = ref;
             }}
             htmlFor="">
-            Exercise</InputLabel>
+            Day</InputLabel>
           <Select
             value={this.props.reduxState.daysReducer.day_id}
             onChange={this.handleSelectExerciseDay}

@@ -14,6 +14,14 @@ const styles = theme => ({
         width: '62%',
         marginTop: theme.spacing.unit * 3,
         overflowX: 'auto',
+        //change below
+        height: 'auto',
+        margin: '20px auto',
+        padding: '2px',
+        borderRadius: '2px',
+        display: 'block',
+        marginLeft: 'auto',
+        marginRight: 'auto',
     },
     table: {
         minWidth: 100,
