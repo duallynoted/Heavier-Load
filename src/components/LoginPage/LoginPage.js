@@ -70,7 +70,7 @@ class LoginPage extends Component {
   render() {
     const { classes } = this.props;
     return (
-      <div>
+      <div className="log-in">
         {this.props.errors.loginMessage && (
           <h2
             className="alert"
@@ -112,7 +112,7 @@ class LoginPage extends Component {
             onClick={() => { this.props.dispatch({ type: 'SET_TO_REGISTER_MODE' }) }}
           >
             <Typography variant="h5">
-              Register
+              REGISTER
                      </Typography>
           </button>
         </center>

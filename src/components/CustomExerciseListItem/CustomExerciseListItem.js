@@ -14,8 +14,6 @@ import swal from 'sweetalert2';
 const styles = {
   card: {
     maxWidth: "100%",
-    // minWidth: 100,
-    // display: "inline-block",
   },
   title: {
     fontSize: 14,
