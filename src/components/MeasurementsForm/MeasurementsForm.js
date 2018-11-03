@@ -6,6 +6,7 @@ import { withStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import PositionedSnackBar from '../PositionedSnackBar/PositionedSnackBar';
 
 
 const styles = theme => ({
@@ -42,7 +43,10 @@ class MeasurementsForm extends Component {
         newMeasurement: {
             body_area: '',
             measurement: 0,
-        }
+        },
+        open: false,
+        vertical: 'top',
+        horizontal: 'right',
     };
 
     handleChangeFor = propertyName => event => {
@@ -63,9 +67,14 @@ class MeasurementsForm extends Component {
             newMeasurement: {
                 body_area: '',
                 measurement: 0,
-            }
+            },
+            open: true,
         });
         console.log('LOOOOK', this.state.newMeasurement);
+    };
+
+    handleClothes = () => {
+        this.setState({ open: false });
     };
 
     render() {
@@ -95,6 +104,13 @@ class MeasurementsForm extends Component {
                         />
                         <Button onClick={this.handleMeasurementSubmit} type="submit" value='Submit' color="primary">Add Measurement</Button>
                     </FormControl>
+                    <PositionedSnackBar
+                        message={"Measurement tracked."}
+                        vertical={this.state.vertical}
+                        horizontal={this.state.horizontal}
+                        open={this.state.open}
+                        handleClothes={this.handleClothes}
+                    />
                 </form>
             </div>
         );

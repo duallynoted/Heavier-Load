@@ -6,6 +6,7 @@ import { withStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import PositionedSnackBar from '../PositionedSnackBar/PositionedSnackBar';
 
 
 const styles = theme => ({
@@ -43,7 +44,10 @@ class NewDayForm extends Component {
         newDay: {
             name: '',
             new_day_id: 1
-        }
+        },
+        open: false,
+        vertical: 'top',
+        horizontal: 'left',
     };
 
     handleChangeFor = propertyName => event => {
@@ -63,9 +67,14 @@ class NewDayForm extends Component {
             newDay: {
                 name: '',
                 new_day_id: 1
-            }
+            },
+            open: true,
         });
         console.log('LOOOOK', this.state.newDay);
+    };
+
+    handleClothes = () => {
+        this.setState({ open: false });
     };
 
 
@@ -90,6 +99,13 @@ class NewDayForm extends Component {
                         />
                         <Button onClick={this.handleSubmit} type="submit" value='Submit' color="primary">Add Day</Button>
                     </FormControl>
+                    <PositionedSnackBar
+                        message={"Day Created. Now add some exercises!"}
+                        vertical={this.state.vertical}
+                        horizontal={this.state.horizontal}
+                        open={this.state.open}
+                        handleClothes={this.handleClothes}
+                    />
                 </form>
             </div>
 

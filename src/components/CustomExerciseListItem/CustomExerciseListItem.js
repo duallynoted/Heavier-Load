@@ -9,6 +9,7 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import CustomExerciseListPopUpEdit from '../CustomExerciseListPop-UpEdit/CustomExerciseListPop-UpEdit';
 import DeleteIcon from '@material-ui/icons/Delete';
+import swal from 'sweetalert2';
 
 const styles = {
   card: {
@@ -23,11 +24,44 @@ const styles = {
     marginBottom: 12,
   },
 };
+const swalWithBootstrapButtons = swal.mixin({
+  confirmButtonClass: 'btn btn-success',
+  cancelButtonClass: 'btn btn-danger',
+  buttonsStyling: true,
+})
 
 class CustomExerciseListItem extends Component {
 
+
+
   deleteExercise = (exercise) => {
-    this.props.dispatch({ type: 'DELETE_EXERCISE', payload: exercise })
+    swalWithBootstrapButtons({
+      title: "Are you sure you want to get rid of " + exercise.title + "?",
+      text: "This exercise cannot be recovered",
+      type: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Yes, delete it',
+      cancelButtonText: 'No, cancel',
+      reverseButtons: true
+    }).then((result) => {
+      if (result.value) {
+        this.props.dispatch({ type: 'DELETE_EXERCISE', payload: exercise })
+        swalWithBootstrapButtons(
+          'Deleted!',
+          'The exercise has been deleted.',
+          'success'
+        )
+      } else if (
+        // Read more about handling dismissals
+        result.dismiss === swal.DismissReason.cancel
+      ) {
+        swalWithBootstrapButtons(
+          'Cancelled',
+          'Your exercise will remain in your profile',
+          'error'
+        )
+      }
+    })
   }
 
   render() {

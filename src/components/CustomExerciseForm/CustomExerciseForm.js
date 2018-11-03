@@ -9,7 +9,7 @@ import TextField from '@material-ui/core/TextField';
 import NewDayForm from '../NewDayForm/NewDayForm';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-
+import PositionedSnackbar from '../PositionedSnackBar/PositionedSnackBar';
 
 const styles = theme => ({
     root: {
@@ -50,7 +50,10 @@ class CustomExerciseForm extends Component {
             title: '',
             weight_load: 0,
             day_id: 0,
-        }
+        },
+        open: false,
+        vertical: 'bottom',
+        horizontal: 'center',
     };
 
     handleChangeFor = propertyName => event => {
@@ -82,9 +85,14 @@ class CustomExerciseForm extends Component {
                 ...this.state.newExercise,
                 title: '',
                 weight_load: 0,
-            }
+            },
+            open: true,
         });
         console.log('LOOOOK', this.state.newExercise);
+    };
+
+    handleClothes = () => {
+        this.setState({ open: false });
     };
 
     render() {
@@ -122,6 +130,13 @@ class CustomExerciseForm extends Component {
                         </Select>
                         <Button onClick={this.handleExerciseSubmit} type="submit" value='Submit' color="primary">Add Exercise</Button>
                     </FormControl>
+                    <PositionedSnackbar
+                        message={"Exercise Created. Let's do this!"}
+                        vertical={this.state.vertical}
+                        horizontal={this.state.horizontal}
+                        open={this.state.open}
+                        handleClothes={this.handleClothes}
+                    />
                 </form>
             </div>
         );
