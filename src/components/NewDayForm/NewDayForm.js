@@ -84,7 +84,7 @@ class NewDayForm extends Component {
         return (
             <div>
                 <Typography variant="h5" component="h3">
-                    Create Days Which Hold Your Exercises
+                    Create Workout Days Which Hold Your Exercises
                      </Typography>
                 <form>
                     <FormControl className={classes.container} noValidate autoComplete="off">

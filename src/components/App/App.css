@@ -9,7 +9,7 @@ body {
 }
 
 form {
-    background-image: linear-gradient(rgba(0, 102, 255, 0.358), rgba(255, 77, 0, 0.29));
+    background-image: linear-gradient(rgba(0, 102, 255, 0.68), rgba(255, 77, 0, 0.297));
     width: 45%;
     height: auto;
     margin: 20px auto;
@@ -20,15 +20,6 @@ form {
 input {
     margin: 5px;
     margin-bottom: 10px;
-}
-
-.log-in, .log-out, .register {
-  background-image: linear-gradient(rgba(216, 74, 13, 0.303), rgba(13, 104, 240, 0.413));
-  border-radius: 4px;
-  min-height: 50px;
-  min-width: 100px;
-  outline:0;
-  cursor: pointer;
 }
 
 .log-in:hover, .log-out:hover, .register:hover {
@@ -49,5 +40,14 @@ input {
 #welcome{
     color:#0d1626;
     font-family: Arial, Helvetica, sans-serif;
-
+}
+#weightRoom{
+    height: auto;
+    margin: 20px auto;
+    padding: 2px;
+    border-radius: 2px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 }

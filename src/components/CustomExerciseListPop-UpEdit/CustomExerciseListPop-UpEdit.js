@@ -50,7 +50,7 @@ class CustomExerciseListPopUpEdit extends React.Component {
           onClose={this.handleClose}
           aria-labelledby="responsive-dialog-title"
         >
-          <DialogTitle id="responsive-dialog-title">{"Update Name"}</DialogTitle>
+          <DialogTitle id="responsive-dialog-title">{"Update Title, Weight Load, Rep Scheme"}</DialogTitle>
           <DialogContent>
             <DialogContentText>
               <input value={this.state.title} onChange={this.handleChangeFor('title')} />

@@ -105,7 +105,7 @@ class CustomExerciseForm extends Component {
                 <br />
                 <br />
                 <Typography variant="h5" component="h3">
-                    Create Your Exercise with a Title, Weight Load, and Day
+                    Create Your Exercise with a Title, Weight Load, Rep Scheme, and Day
                      </Typography>
                 <form>
                     <FormControl className={classes.container} noValidate autoComplete="off">

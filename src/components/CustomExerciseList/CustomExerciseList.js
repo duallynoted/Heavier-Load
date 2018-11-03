@@ -20,12 +20,11 @@ class CustomExerciseList extends Component {
         return (
             <div>
                 <DaySelectorList />
-                <Divider />
-                <img src="https://www.spartantcb.org/wp-content/uploads/2017/07/Wieght-Room.jpg" height="150" />
-                <Divider />
+                <img id="weightRoom" src="https://www.spartantcb.org/wp-content/uploads/2017/07/Wieght-Room.jpg" />
                 <Typography variant="h3">
-                    All {this.props.reduxState.user.first_name}'s Exercises
+                    All of {this.props.reduxState.user.first_name}'s Exercises
                      </Typography>
+                <Divider />
                 <Grid
                     container
                     direction="row"
