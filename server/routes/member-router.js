@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
     ORDER BY "id";`)
         .then((results) => {
             res.send(results.rows);
-        }).catch((error) => {   
+        }).catch((error) => {
             res.sendStatus(500);
             console.log('error getting member', error);
         });//end GET pool query
@@ -27,7 +27,7 @@ WHERE "person".id = $1
 ORDER BY "custom_exercise".id DESC;`, [id])
         .then((results) => {
             res.send(results.rows);
-        }).catch((error) => {   
+        }).catch((error) => {
             res.sendStatus(500);
             console.log('error getting exercise', error);
         });//end GET pool query
@@ -42,24 +42,23 @@ router.put('/:id', (req, res) => {
     pool.query(`UPDATE "person" 
     SET "first_name"=$1,"last_name"=$2,"height"=$3,"weight"=$4,"gender"=$5,"goal"=$6
     WHERE "id" = $7;`, queryValues)
-    .then(() => {
-        res.sendStatus(200);
-    }).catch(error => {
-        console.log('error updating member', error);
-        res.sendStatus(500);
-    });//end PUT pool query 
+        .then(() => {
+            res.sendStatus(200);
+        }).catch(error => {
+            console.log('error updating member', error);
+            res.sendStatus(500);
+        });//end PUT pool query 
 });//end PUT call server side
 
 //this query will make post calls from member-generated data, creating exercises to track weight-load over time
 router.post('/:id', (req, res) => {
-    let person_id= req.user.id;
-    const newExercise= req.body;
-    const queryValues = [newExercise.title, newExercise.weight_load, newExercise.day_id, person_id];
-    pool.query(`INSERT INTO "custom_exercise" ("title","weight_load","day_id","person_id")
-    VALUES ($1,$2,$3,$4);`, queryValues)
+    let person_id = req.user.id;
+    const newExercise = req.body;
+    const queryValues = [newExercise.title, newExercise.weight_load, newExercise.rep_scheme, newExercise.day_id, person_id];
+    pool.query(`INSERT INTO "custom_exercise" ("title","weight_load","rep_scheme","day_id","person_id")
+    VALUES ($1,$2,$3,$4,$5);`, queryValues)
         .then((results) => {
-            console.log('NEWEXERCISE: ', results);
-            res.send(results.rows);            
+            res.send(results.rows);
         }).catch((error) => {
             console.log('Error POSTING exercise to PostgreSQL', error);
             res.sendStatus(500);
@@ -78,6 +77,6 @@ router.delete('/:id', (req, res) => {
             console.log('Error DELETING exercise from PostgreSQL', error);
             res.sendStatus(500);
         })//end DELETE query
- });//end DELETE call server side
+});//end DELETE call server side
 
 module.exports = router;

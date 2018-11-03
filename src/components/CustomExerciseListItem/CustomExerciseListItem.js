@@ -80,6 +80,9 @@ class CustomExerciseListItem extends Component {
           <br />
             {this.props.exercise.weight_load} lbs
         </Typography>
+          <Typography variant="h6" component="h2">
+            {this.props.exercise.rep_scheme}
+          </Typography>
           <Typography component="p">
             {this.props.exercise.day_name}
             <br />

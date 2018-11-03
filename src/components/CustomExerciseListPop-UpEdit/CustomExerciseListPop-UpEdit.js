@@ -15,14 +15,15 @@ class CustomExerciseListPopUpEdit extends React.Component {
     id: this.props.exercise.id,
     title: this.props.exercise.title,
     weight_load: this.props.exercise.weight_load,
+    rep_scheme: this.props.exercise.rep_scheme,
   };
 
-handleChangeFor = propertyName => event => {
+  handleChangeFor = propertyName => event => {
     this.setState({
-        ...this.state,
-        [propertyName]: event.target.value,
+      ...this.state,
+      [propertyName]: event.target.value,
     });
-}
+  }
 
   handleClickOpen = () => {
     this.setState({ open: true });
@@ -34,16 +35,16 @@ handleChangeFor = propertyName => event => {
 
 
   updateState = () => {
-    this.props.dispatch({type:'UPDATE_LOAD', payload:this.state});
+    this.props.dispatch({ type: 'UPDATE_LOAD', payload: this.state });
     console.log('hey???')
     this.handleClose();
-}
+  }
 
-  render() {  
+  render() {
     return (
       <div>
-          
-        <Button color="secondary" className="button"onClick={this.handleClickOpen}>Make it Heavier</Button>
+
+        <Button color="secondary" className="button" onClick={this.handleClickOpen}>Make it Heavier</Button>
         <Dialog
           open={this.state.open}
           onClose={this.handleClose}
@@ -52,8 +53,9 @@ handleChangeFor = propertyName => event => {
           <DialogTitle id="responsive-dialog-title">{"Update Name"}</DialogTitle>
           <DialogContent>
             <DialogContentText>
-            <input value={this.state.title} onChange={this.handleChangeFor('title')} />
-            <input value={this.state.weight_load} onChange={this.handleChangeFor('weight_load')} />
+              <input value={this.state.title} onChange={this.handleChangeFor('title')} />
+              <input value={this.state.weight_load} onChange={this.handleChangeFor('weight_load')} />
+              <input value={this.state.rep_scheme} onChange={this.handleChangeFor('rep_scheme')} />
             </DialogContentText>
           </DialogContent>
           <DialogActions>
@@ -76,10 +78,10 @@ CustomExerciseListPopUpEdit.propTypes = {
 
 
 const mapReduxStateToProps = (reduxState) => {
-    return {
-      reduxState,
-    }
+  return {
+    reduxState,
+  }
 }
 
 
-export default connect(mapReduxStateToProps) (withMobileDialog()(CustomExerciseListPopUpEdit));
+export default connect(mapReduxStateToProps)(withMobileDialog()(CustomExerciseListPopUpEdit));

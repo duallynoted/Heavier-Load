@@ -49,6 +49,7 @@ class CustomExerciseForm extends Component {
         newExercise: {
             title: '',
             weight_load: 0,
+            rep_scheme: '',
             day_id: 0,
         },
         open: false,
@@ -85,6 +86,7 @@ class CustomExerciseForm extends Component {
                 ...this.state.newExercise,
                 title: '',
                 weight_load: 0,
+                rep_scheme: '',
             },
             open: true,
         });
@@ -121,7 +123,13 @@ class CustomExerciseForm extends Component {
                             onChange={this.handleChangeFor('weight_load')}
                             margin="normal"
                         />
-
+                        <TextField
+                            label="Rep Scheme (2x15, 3x10, etc)"
+                            className={classes.textField}
+                            value={this.state.newExercise.rep_scheme}
+                            onChange={this.handleChangeFor('rep_scheme')}
+                            margin="normal"
+                        />
                         <Select value={this.state.newExercise.day_id} onChange={this.handleSelectChange}>
                             <MenuItem value={0}>{this.props.reduxState.user.first_name}'s next exercise</MenuItem>
                             {this.props.reduxState.daysReducer.map(day => {
