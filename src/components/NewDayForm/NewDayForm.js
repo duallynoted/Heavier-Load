@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router';
 import FormControl from '@material-ui/core/FormControl';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
@@ -70,7 +71,7 @@ class NewDayForm extends Component {
             },
             open: true,
         });
-        console.log('LOOOOK', this.state.newDay);
+        this.props.history.push('/exercises');
     };
 
     handleClothes = () => {
@@ -83,7 +84,7 @@ class NewDayForm extends Component {
         return (
             <div>
                 <Typography variant="h5" component="h3">
-                    Start Here by Creating Days Which Hold Your Exercises
+                    Create Days Which Hold Your Exercises
                      </Typography>
                 <form>
                     <FormControl className={classes.container} noValidate autoComplete="off">
@@ -122,6 +123,7 @@ const mapStateToProps = reduxState => ({
 
 const newDayStyles = withStyles(styles)(NewDayForm)
 
+const newDayRouterStyles = withRouter(newDayStyles);
 
-export default connect(mapStateToProps)(newDayStyles);
+export default connect(mapStateToProps)(newDayRouterStyles);
 

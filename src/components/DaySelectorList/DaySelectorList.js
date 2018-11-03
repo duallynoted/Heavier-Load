@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import CustomExerciseForm from '../CustomExerciseForm/CustomExerciseForm';
 import CustomExerciseListItem from '../CustomExerciseListItem/CustomExerciseListItem';
 import DaySelector from '../DaySelector/DaySelector';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
-
+import { withRouter } from 'react-router';
+import Button from '@material-ui/core/Button';
 
 
 class DaySelectorList extends Component {
+
+    handleClick = () => {
+        this.props.history.push('createexercise')
+    }
 
     render() {
         let day = this.props.reduxState.daysReducer
@@ -18,6 +22,7 @@ class DaySelectorList extends Component {
                     Today's Exercises
                 </Typography>
                 <DaySelector />
+                <Button onClick={this.handleClick}>Create Exercise</Button>
 
                 {!this.props.reduxState.setSelectedDayReducer ? <Typography variant="h6">Choose a Day From the List Above to Start Lifting</Typography> :
                     <Grid
@@ -48,6 +53,8 @@ const mapStateToProps = reduxState => ({
     reduxState,
 });
 
-export default connect(mapStateToProps)(DaySelectorList);
+const daySelectorRouterList = withRouter(DaySelectorList)
+
+export default connect(mapStateToProps)(daySelectorRouterList);
 
 

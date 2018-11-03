@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router';
 import FormControl from '@material-ui/core/FormControl';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
@@ -54,6 +55,7 @@ class LoginPage extends Component {
           password: this.state.password,
         },
       });
+      this.props.history.push('/home')
     } else {
       this.props.dispatch({ type: 'LOGIN_INPUT_ERROR' });
     }
@@ -129,5 +131,6 @@ const mapStateToProps = state => ({
 
 const loginStyles = withStyles(styles)(LoginPage)
 
+const loginRouterStyles = withRouter(loginStyles)
 
-export default connect(mapStateToProps)(loginStyles);
+export default connect(mapStateToProps)(loginRouterStyles);
