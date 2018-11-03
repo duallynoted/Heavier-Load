@@ -63,3 +63,14 @@ input {
     margin-right: auto;
     width: 50%;
 }
+
+.CustomExerciseListCSS{
+    /* background-image: url("https://www.spartantcb.org/wp-content/uploads/2017/07/Wieght-Room.jpg"); */
+    background-image: url("https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/2015/02/lightweights-1508865152.jpg");
+    background-repeat: no-repeat;
+    background-position-x: 5em;
+    background-position-y: 10em;
+    background-attachment: fixed; 
+    background-size: 60em;
+    
+}

@@ -36,7 +36,7 @@ class Nav extends Component {
               {this.props.user.id ? <NavDrawer /> : <VerifiedUserIcon />}
             </IconButton>
             <Typography variant="h5" color="inherit" className={classes.grow}>
-              Heavier Load
+              <Link className="nav-title" to="/home">Heavier Load</Link>
             </Typography>
             <div>
               <Link to="/home">

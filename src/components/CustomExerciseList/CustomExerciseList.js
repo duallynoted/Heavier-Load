@@ -3,11 +3,7 @@ import { connect } from 'react-redux';
 import CustomExerciseListItem from '../CustomExerciseListItem/CustomExerciseListItem';
 import DaySelectorList from '../DaySelectorList/DaySelectorList';
 import Grid from '@material-ui/core/Grid';
-import Divider from '@material-ui/core/Divider';
 import Typography from '@material-ui/core/Typography';
-
-
-
 
 class CustomExerciseList extends Component {
     componentDidMount() {
@@ -18,13 +14,12 @@ class CustomExerciseList extends Component {
 
     render() {
         return (
-            <div>
+            <div className="CustomExerciseListCSS">
                 <DaySelectorList />
-                <img id="weightRoom" src="https://www.spartantcb.org/wp-content/uploads/2017/07/Wieght-Room.jpg" />
+                {/* <img id="weightRoom" src="https://www.spartantcb.org/wp-content/uploads/2017/07/Wieght-Room.jpg" /> */}
                 <Typography variant="h3">
                     All of {this.props.reduxState.user.first_name}'s Exercises
                      </Typography>
-                <Divider />
                 <Grid
                     container
                     direction="row"

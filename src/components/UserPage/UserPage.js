@@ -16,6 +16,12 @@ const styles = theme => ({
     paddingTop: theme.spacing.unit * 3,
     paddingBottom: theme.spacing.unit * 3,
     justifyContent: 'center',
+    backgroundImage: "url(" + "https://fitforfutbol.com/wp-content/uploads/2017/02/Wieght-Room.jpg" + ")",
+    backgroundRepeat: 'no-repeat',
+    backgroundPositionX: '6em',
+    backgroundPositionY: '1em',
+    backgroundAttachment: 'fixed',
+    backgroundSize: '60em',
 
   },
 });
