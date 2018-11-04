@@ -16,7 +16,6 @@ class CustomExerciseList extends Component {
         return (
             <div className="CustomExerciseListCSS">
                 <DaySelectorList />
-                {/* <img id="weightRoom" src="https://www.spartantcb.org/wp-content/uploads/2017/07/Wieght-Room.jpg" /> */}
                 <Typography variant="h3">
                     All of {this.props.reduxState.user.first_name}'s Exercises
                      </Typography>
@@ -47,7 +46,6 @@ const mapStateToProps = reduxState => ({
 
 export default connect(mapStateToProps)(CustomExerciseList);
 
-{/* <td><button onClick={() => this.handleClick}>Make it Heavier</button></td> */ }
 
 
 

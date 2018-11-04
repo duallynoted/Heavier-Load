@@ -10,7 +10,7 @@ CREATE TABLE "person" (
     "height" VARCHAR(16),
     "weight" VARCHAR (40),
     "gender" VARCHAR(40),
-    "goal" VARCHAR(300
+    "goal" VARCHAR(300)
  );
 
 --create table to hold member-generated exercises to track weight-load over time

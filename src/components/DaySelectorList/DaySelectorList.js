@@ -15,7 +15,6 @@ class DaySelectorList extends Component {
     }
 
     render() {
-        let day = this.props.reduxState.daysReducer
         return (
             <div>
                 <Typography variant="h3">
