@@ -16,13 +16,20 @@ const styles = theme => ({
     paddingTop: theme.spacing.unit * 3,
     paddingBottom: theme.spacing.unit * 3,
     justifyContent: 'center',
-    backgroundImage: "url(" + "https://fitforfutbol.com/wp-content/uploads/2017/02/Wieght-Room.jpg" + ")",
+    backgroundImage: "url(" + "https://i2.wp.com/gxmediagy.com/wp-content/uploads/2013/11/website-background-hd-backgound-widesceen-colorful-desktop-latop-white.jpg" + ")",
     backgroundRepeat: 'no-repeat',
     backgroundPositionX: '6em',
     backgroundPositionY: '1em',
     backgroundAttachment: 'fixed',
     backgroundSize: '60em',
-
+  },
+  title: {
+    margin: "auto",
+    maxWidth: 850,
+    display: 'flex',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'floatLeft',
   },
 });
 
@@ -37,14 +44,14 @@ class UserPage extends Component {
       <div>
 
         <Paper className={classes.root} elevation={10}>
-          <Typography variant="h5" component="h3">
+          <Typography className={classes.title} variant="h5" component="h3">
             Welcome, {this.props.user.first_name}!
         </Typography>
-          <Typography variant="h5" component="h3">
+          <Typography className={classes.title} variant="h5" component="h3">
             Your goal is to: {this.props.user.goal}
           </Typography>
           <MemberInfoList />
-          <Button onClick={this.logout}>Log Out</Button>
+          <Button className={classes.title} onClick={this.logout}>Log Out</Button>
         </Paper>
       </div>
     );

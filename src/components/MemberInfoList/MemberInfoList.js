@@ -13,7 +13,7 @@ import MemberInfoPopUpEdit from '../MemberInfoPop-UpEdit/MemberInfoPop-UpEdit';
 const styles = {
     card: {
         margin: "auto",
-        maxWidth: 850,
+        maxWidth: 550,
         display: 'flex',
         flexDirection: 'row',
         flexWrap: 'wrap',
