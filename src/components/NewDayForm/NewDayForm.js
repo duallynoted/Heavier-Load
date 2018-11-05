@@ -78,12 +78,11 @@ class NewDayForm extends Component {
         this.setState({ open: false });
     };
 
-
     render() {
         const { classes } = this.props;
         return (
             <div>
-                <Typography variant="h5" component="h3">
+                <Typography id="weightRoom" variant="h5" component="h3">
                     Create Workout Days Which Hold Your Exercises
                      </Typography>
                 <form>

@@ -63,13 +63,43 @@ input {
     margin-right: auto;
     width: 50%;
 }
+#exerciseTernary{
+    color: rgb(28, 9, 152);
+    height: auto;
+    margin: 20px auto;
+    padding: 2px;
+    border-radius: 2px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#createExerciseButton{
+    
+    height: 10px;
+    margin: 20px;
+    padding: 2px;
+    border-radius: 2px;
+    display: block;
+    margin-left: 85px;
+    /* margin-right: auto; */
+    /* width: 50%; */
+}
 
 .CustomExerciseListCSS{
     background-image: url("https://thefourpercent.com/wp-content/uploads/2015/07/SJ-background.jpg");
     background-repeat: no-repeat;
     background-position-x: 5em;
-    background-position-y: 10em;
+    background-position-y: 16em;
     background-attachment: fixed; 
     background-size: 60em;
-    
+}
+#CustomExerciseListTEXT{
+    color: rgb(0, 0, 0);
+    height: auto;
+    margin: 20px auto;
+    padding: 2px;
+    border-radius: 2px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 }

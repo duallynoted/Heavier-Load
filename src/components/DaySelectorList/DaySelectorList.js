@@ -6,7 +6,7 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { withRouter } from 'react-router';
 import Button from '@material-ui/core/Button';
-
+import RowingIcon from '@material-ui/icons/Rowing';
 
 class DaySelectorList extends Component {
 
@@ -17,13 +17,10 @@ class DaySelectorList extends Component {
     render() {
         return (
             <div>
-                <Typography variant="h3">
-                    Today's Exercises
-                </Typography>
                 <DaySelector />
-                <Button onClick={this.handleClick}>Create Exercise</Button>
+                <Button id="createExerciseButton" onClick={this.handleClick} color="secondary" >Create Exercise</Button>
 
-                {!this.props.reduxState.setSelectedDayReducer ? <Typography variant="h6">Choose a Day From the List Above to Start Lifting</Typography> :
+                {!this.props.reduxState.setSelectedDayReducer ? <Typography id="exerciseTernary" color="red" variant="h6"><RowingIcon /></Typography> :
                     <Grid
                         container
                         direction="row"

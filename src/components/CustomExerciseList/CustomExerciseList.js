@@ -16,8 +16,8 @@ class CustomExerciseList extends Component {
         return (
             <div className="CustomExerciseListCSS">
                 <DaySelectorList />
-                <Typography variant="h3">
-                    All of {this.props.reduxState.user.first_name}'s Exercises
+                <Typography id="CustomExerciseListTEXT" variant="h3">
+                    {this.props.reduxState.user.first_name}'s Exercises
                      </Typography>
                 <Grid
                     container

@@ -32,9 +32,9 @@ class Nav extends Component {
       <div className={classes.root}>
         <AppBar position="static">
           <Toolbar>
-            <IconButton className={classes.menuButton}>
+            <Typography className={classes.menuButton}>
               {this.props.user.id ? <NavDrawer /> : <VerifiedUserIcon />}
-            </IconButton>
+            </Typography>
             <Typography variant="h5" color="inherit" className={classes.grow}>
               <Link className="nav-title" to="/home">Heavier Load</Link>
             </Typography>

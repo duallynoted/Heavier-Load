@@ -104,8 +104,8 @@ class CustomExerciseForm extends Component {
                 <NewDayForm />
                 <br />
                 <br />
-                <Typography variant="h5" component="h3">
-                    Create Your Exercise with a Title, Weight Load, Rep Scheme, and Day
+                <Typography id="weightRoom" variant="h5" component="h3">
+                    Create Your Exercise with a Title, Weight Load, Rep Scheme, and Workout Day
                      </Typography>
                 <form>
                     <FormControl className={classes.container} noValidate autoComplete="off">

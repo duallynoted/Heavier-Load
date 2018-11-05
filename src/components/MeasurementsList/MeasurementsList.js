@@ -8,6 +8,8 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import TrackChangesIcon from '@material-ui/icons/TrackChanges';
+
 
 const styles = theme => ({
     root: {
@@ -48,6 +50,7 @@ class MeasurementsList extends Component {
                     <Table className={classes.table}>
                         <TableHead>
                             <TableRow >
+                                <TableCell><TrackChangesIcon /></TableCell>
                                 <TableCell numeric>Body Area</TableCell>
                                 <TableCell numeric>Measurement</TableCell>
                             </TableRow>
@@ -56,6 +59,7 @@ class MeasurementsList extends Component {
                             {this.props.reduxState.measurementsListReducer.map(measurement => {
                                 return (
                                     <TableRow key={measurement.id}>
+                                        <TableCell></TableCell>
                                         <TableCell >{measurement.body_area}</TableCell>
                                         <TableCell numeric>{measurement.measurement}''</TableCell>
                                     </TableRow>

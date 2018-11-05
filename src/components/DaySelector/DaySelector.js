@@ -7,6 +7,7 @@ import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
+import Typography from '@material-ui/core/Typography';
 
 const styles = theme => ({
   root: {
@@ -28,7 +29,7 @@ class DaySelector extends Component {
   }
   componentDidMount() {
     this.setState({
-      labelWidth: ReactDOM.findDOMNode(this.InputLabelRef).offsetWidth,
+      // labelWidth: ReactDOM.findDOMNode(this.InputLabelRef).offsetWidth,
     });
   }
 
@@ -44,14 +45,17 @@ class DaySelector extends Component {
   render() {
     const { classes } = this.props;
     return (
-      <div>
+      <div id="weightRoom">
         <FormControl className={classes.formControl}>
-          <InputLabel
+          {/* <InputLabel
             ref={ref => {
               this.InputLabelRef = ref;
             }}
             htmlFor="">
-            Day</InputLabel>
+            Day</InputLabel> */}
+          <Typography id="exerciseTernary" variant="h6">
+            Choose a Workout Day From the List Below To Get Started
+                </Typography>
           <Select
             value={this.props.reduxState.daysReducer.day_id}
             onChange={this.handleSelectExerciseDay}
