@@ -71,7 +71,6 @@ class NewDayForm extends Component {
             },
             open: true,
         });
-        this.props.history.push('/exercises');
     };
 
     handleClothes = () => {

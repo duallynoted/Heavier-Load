@@ -106,15 +106,14 @@ class LoginPage extends Component {
           </FormControl>
         </form>
         <center>
-          <button
+          <Button
             type="button"
             className="link-button"
             onClick={() => { this.props.dispatch({ type: 'SET_TO_REGISTER_MODE' }) }}
           >
-            <Typography variant="h5">
-              REGISTER
-                     </Typography>
-          </button>
+              Register
+            
+          </Button>
         </center>
       </div>
     );

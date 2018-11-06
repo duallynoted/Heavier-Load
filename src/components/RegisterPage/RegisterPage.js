@@ -103,13 +103,13 @@ class RegisterPage extends Component {
           </FormControl>
         </form>
         <center>
-          <button
+          <Button
             type="button"
             className="link-button"
             onClick={() => { this.props.dispatch({ type: 'SET_TO_LOGIN_MODE' }) }}
           >
             Login
-          </button>
+          </Button>
         </center>
       </div>
     );
