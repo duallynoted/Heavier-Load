@@ -26,10 +26,9 @@ input {
 .log-in{
     background-image: url("https://img.aws.livestrongcdn.com/ls-article-image-673/ds-photo/getty/article/74/79/90205157.jpg");
     background-repeat: no-repeat;
-    margin: 20px auto;
+    margin: 50px auto;
     padding: 2px;
-    border-radius: 2px;
-    display: flex;
+    display: block;
     margin-left: auto;
     margin-right: auto;
     width: 50%;   
@@ -38,17 +37,6 @@ input {
   background-color: #d3d3d3;
 }
 
-/* This line makes the "Register" and "Login" buttons look like links */
-.link-button {
-    background:none;
-    color:inherit;
-    border:none;
-    padding:0;
-    font: inherit;
-    outline:0;
-    border-bottom:1px solid #444; 
-    cursor: pointer;
-}
 #welcome{
     color:#0d1626;
     font-family: Arial, Helvetica, sans-serif;
@@ -91,7 +79,7 @@ input {
     background-position-x: 5em;
     background-position-y: 16em;
     background-attachment: fixed; 
-    background-size: 60em;
+    background-size: 80em;
 }
 #CustomExerciseListTEXT{
     color: rgb(0, 0, 0);
