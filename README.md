@@ -46,7 +46,7 @@ CREATE TABLE "custom_exercise" (
     "id" SERIAL PRIMARY KEY,
     "title" VARCHAR(120),
     "weight_load" INT,
-	"rep_scheme" VARCHAR (120),
+    "rep_scheme" VARCHAR (120),
     "day_id" INT REFERENCES "day_of_week",
     "person_id" INT REFERENCES "person"
 );
