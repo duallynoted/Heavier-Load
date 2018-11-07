@@ -9,12 +9,12 @@ This version uses React, Redux, Express, Passport, and PostgreSQL (a full list o
 Make sure you have the following software installed on your computer:
 
 - [Node.js](https://nodejs.org/en/)
-- [PostrgeSQL](https://www.postgresql.org/)
+- [PostgreSQL](https://www.postgresql.org/)
 - [Nodemon](https://nodemon.io/)
 
 ## Create database and tables
 
-Create a new database called `heavier_load`. 
+Create a database called `heavier_load`, or whatever you want. 
 
 ##1
 ```SQL
@@ -63,4 +63,3 @@ CREATE TABLE "measurement" (
 ```
 A detailed view of relation tables needed can be found in database.sql
 
-https://gist.github.com/PurpleBooth/109311bb0361f32d87a2
