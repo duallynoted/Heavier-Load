@@ -55,10 +55,10 @@ CREATE TABLE "custom_exercise" (
 ##4
 ```SQL
 CREATE TABLE "measurement" (
-	"id" SERIAL PRIMARY KEY,
-	"body_area" VARCHAR(120),
-	"measurement" INT,
-	"person_id" INT REFERENCES "person"
+    "id" SERIAL PRIMARY KEY,
+    "body_area" VARCHAR(120),
+    "measurement" INT,
+    "person_id" INT REFERENCES "person"
 );
 ```
 A detailed view of relation tables needed can be found in database.sql
