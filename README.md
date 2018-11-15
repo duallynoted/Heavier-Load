@@ -12,6 +12,9 @@ Make sure you have the following software installed on your computer:
 - [PostgreSQL](https://www.postgresql.org/)
 - [Nodemon](https://nodemon.io/)
 
+- [npm install] to get dependencies installed
+
+
 ## Create database and tables
 
 Create a database called `heavier_load`, or whatever you want. 
