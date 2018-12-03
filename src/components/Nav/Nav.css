@@ -6,7 +6,7 @@
     padding-left: 10px;
     font-family: Arial, Helvetica, sans-serif;
     text-decoration: none;
-    text-transform: uppercase;
+    text-transform: unset
 }
 
 .nav {
