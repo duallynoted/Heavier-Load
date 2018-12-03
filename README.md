@@ -11,6 +11,10 @@ Make sure you have the following software installed on your computer:
 - [Node.js](https://nodejs.org/en/)
 - [PostgreSQL](https://www.postgresql.org/)
 - [Nodemon](https://nodemon.io/)
+- npm install will install dependencies needed to run the program
+- npm run server to get server running on localhost 5000
+- npm run client to get client running on localhost 3000
+
 
 ## Create database and tables
 
